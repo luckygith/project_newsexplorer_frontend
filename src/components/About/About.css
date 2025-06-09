@@ -1,0 +1,25 @@
+.author {
+    height: 624px;
+    max-width: 1440px;
+    background-color: pink;
+display: flex;
+
+}
+
+.author__image {
+max-width: 464px;
+max-height: 464px;
+border-radius: 1000px;
+
+}
+.author__content {
+
+}
+
+.author__title {
+
+}
+
+.author__description {
+
+}

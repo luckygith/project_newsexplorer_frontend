@@ -1,0 +1,47 @@
+.header {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+margin: 0;
+padding: 0;
+position: relative;
+height:auto;
+line-height: 0;
+
+
+}
+
+.header__logo {
+    font-family: "RobotoSlab";
+    font-weight: 700;
+    font-size: 20px;
+
+}
+
+.header__links {
+    
+    display: flex;
+    align-items: center;
+font-family: "Roboto";
+font-weight: 500;
+font-size: 18px;
+}
+
+.header__home-button {
+    color: #FFFFFF;
+    margin-right: 42px;
+}
+
+.header__sign-in-button {
+    color: #FFFFFF;
+   
+    border-radius: 100px;
+    border-color: pink;
+    width: 176px;
+    height: 48px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #FFFFFF; 
+
+}

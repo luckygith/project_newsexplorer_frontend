@@ -1,9 +1,9 @@
 import React from 'react'
 import '../Main/Main.css'
 
-const Main = () => {
+function Main () {
   return (
-    <div>Main</div>
+<div>main</div>
   )
 }
 
