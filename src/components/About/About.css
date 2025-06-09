@@ -1,8 +1,10 @@
 .author {
-    height: 624px;
+    max-height: 624px;
     max-width: 1440px;
-    background-color: pink;
+
 display: flex;
+padding-top:80px;
+padding-bottom: 80px;
 
 }
 
@@ -13,13 +15,22 @@ border-radius: 1000px;
 
 }
 .author__content {
+    width: 600px;
+    height:120px;
+   
+    font-weight: 400px;
+    margin: 51px 0px 303px 56px;
 
 }
 
 .author__title {
+    font-family: "RobotoSlab";
+    font-size: 40px;
 
 }
 
 .author__description {
+    font-family: "Roboto";
+    font-size: 18px;
 
 }

@@ -6,7 +6,7 @@ max-height: 576px;
 border: 1px; 
 width: 100vw;
   height: auto;
-  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
 
   min-width: 1100px;
   max-width: 1600px;

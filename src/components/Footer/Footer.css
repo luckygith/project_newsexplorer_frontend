@@ -1,0 +1,25 @@
+.footer__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Roboto";
+    font-weight: 400px;
+}
+
+.footer__text {
+    font-size: 16px;
+ 
+    line-height: 22px;
+}
+
+.footer__links-social{
+    margin-left: 24px;
+    height: 24px;
+    width: 24px;
+}
+
+.footer__links-hyperlink {
+    margin-right: 40px;
+    font-size: 18px;
+
+}
