@@ -1,0 +1,12 @@
+.modal{
+
+}
+
+.modal__content{
+    max-width: 430px;
+    width: 100%;
+}
+
+.modal__close{
+    background-image: url(../../assets/close.svg);
+}

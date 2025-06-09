@@ -13,11 +13,20 @@
     align-items: center;
 }
  .navigation__title{
+    max-width: 608px;
+    max-height: 128px;
+    font-family: "RobotoSlab";
+    font-size: 60px;
+line-height: 64px;
     margin-top: 80px;
     margin-bottom: 32px;
  }
 .navigation__description{
     margin-bottom: 88px;
+    max-width: 545px;
+    max-height: 48px;
+    font-size: 18px;
+    line-height: 24px;
 }
  .navigation__search-container{
   

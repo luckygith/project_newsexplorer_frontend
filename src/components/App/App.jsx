@@ -11,6 +11,7 @@ import Profile from '../Profile/Profile';
 import Navigation from '../Navigation/Navigation';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
+import ModalwithForm from '../ModalWithForn/ModalwithForm';
 
 function App() {
 
@@ -22,6 +23,10 @@ function App() {
     content: "",
   });
  
+  const [activeModal, setActiveModal] = useState("")
+
+
+
  return (
   <div className="page">
     <div className="page__content">
@@ -30,6 +35,7 @@ function App() {
       <Navigation />
       <About />
       <Footer />
+      <ModalwithForm />
 
       <Routes>
         <Route 
@@ -45,7 +51,13 @@ function App() {
         }
         />
         </Routes> 
+
     </div>
+
+
+    {/* <LoginModal />
+<SignUpModal />
+<RegistrationConfirmedModal /> */}
   </div>
   );
 }
