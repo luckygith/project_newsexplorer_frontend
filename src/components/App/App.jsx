@@ -12,6 +12,8 @@ import Navigation from '../Navigation/Navigation';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 import ModalwithForm from '../ModalWithForn/ModalwithForm';
+import LoginModal from '../LoginModal/LoginModal';
+import RegisterModal from '../RegisterModal/RegisterModal';
 
 function App() {
 
@@ -25,17 +27,35 @@ function App() {
  
   const [activeModal, setActiveModal] = useState("")
 
+  const handleCloseModal = () => {
+    setActiveModal("");
+  };
 
+  const handleLoginClick = () => {
+    setActiveModal("login");
+  };
+
+const handleLogin = () => {
+  console.log("setup LOGIN");
+}
+
+const handleRegisterClick = () => {
+  setActiveModal("registration");
+}
+
+const handleRegistration = () => {
+  console.log("setup REGISTER")
+}
 
  return (
   <div className="page">
     <div className="page__content">
   
-      <Header />
+      <Header handleLoginClick={handleLoginClick}/>
       <Navigation />
       <About />
       <Footer />
-      <ModalwithForm />
+   
 
       <Routes>
         <Route 
@@ -55,9 +75,29 @@ function App() {
     </div>
 
 
-    {/* <LoginModal />
-<SignUpModal />
-<RegistrationConfirmedModal /> */}
+{activeModal === "login" && (
+  <LoginModal 
+  isOpen={activeModal === "login"}
+  handleCloseModal={handleCloseModal}
+  handleLogin={handleLogin}
+  handleRegistration={handleRegistration}
+/>
+)}
+
+{activeModal === "registration" && (
+  <RegisterModal 
+  isOpen={activeModal === "registration"}
+  handleCloseModal={handleCloseModal}
+  handleRegistration={handleRegistration}
+handleLoginClick={handleLoginClick}
+  />
+)}
+
+{activeModal === "registration-confirmed" && (
+  <RegistrationConfirmedModal />
+)}
+
+   
   </div>
   );
 }

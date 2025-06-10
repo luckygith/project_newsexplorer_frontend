@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../Header/Header.css';
 
 
-function Header () {
+function Header ({handleLoginClick}) {
   return (
     <header className="header">
       
@@ -14,7 +14,7 @@ function Header () {
 <Link className="header__home-button" to="/">
 Home
 </Link>
-<button className="header__sign-in-button" type='button' >
+<button className="header__sign-in-button" type='button' onClick={handleLoginClick}>
     Sign in
 </button>
 </div>
