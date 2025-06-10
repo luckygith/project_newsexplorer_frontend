@@ -1,5 +1,5 @@
 .page {
-  /* background-color: #f3f3f3; */
+
 background-image: url(../../assets/navigation-image.svg);
 max-width:1440px;
 max-height: 576px;
@@ -15,9 +15,10 @@ width: 100vw;
 }
 
 .page__content {
+  
   /* max-width: 1360px; */
   height: auto;
   margin: 0 auto;
-  padding: 30px 104px ;
+ 
   min-width: 375px;
 }

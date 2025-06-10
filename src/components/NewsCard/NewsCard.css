@@ -1,7 +1,17 @@
+.news-cards__list {
+    display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin:0;
+  padding: 0;
+}
+
 .news-card {
-    background-color: pink;
+    background-color: #FFFFFF;
 display: flex;
  flex-direction: column;
+ height: 576px;
+ border-radius: 0 0 16px 16px;
 }
 
 .news-card__container {
@@ -11,16 +21,18 @@ max-width:400px;
 max-height: 272px;
 display: flex;
 flex-direction: column;
+border-radius: 16px 16px 0 0;
 }
 
 .news-card__image{
     width: 400px;
     height: 272px;
-    /* object-fit: scale-down; */
+    object-fit: scale-down;
 }
 
 .news-card__text-container {
     max-width:400px;
 height: 272px;
-background-color: greenyellow;
+
+
 }
