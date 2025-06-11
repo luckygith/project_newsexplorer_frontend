@@ -9,7 +9,11 @@ function Profile () {
     <>
 
     <Header />
+    <section className="profile__content">
+    <p className="profile__subtitle">Saved articles</p>
 <h3 className="profile__title">Elise, you have 5 saved articles</h3>
+<p className="profile__heading">By keywords: Nature, Yellowstone, and 2 other</p>
+</section>
     <Main />
     <Footer />
     </>

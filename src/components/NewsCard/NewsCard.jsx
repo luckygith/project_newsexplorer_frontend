@@ -1,11 +1,21 @@
 import React from 'react'
+import { useState } from 'react'
 import '../NewsCard/NewsCard.css'
+import saveButton from '../../assets/saveButton.svg'
+import unsaveButton from '../../assets/unsaveButton.svg'
 
 
 function NewsCard({newsCard}) {
+
+  const [isSaved, setIsSaved] = useState(newsCard.saved)
+
   return (
     <li className="news-card">
       <div className='news-card__container'>
+      <div className="news-card__header">
+        <img className='news-card__save-button' src={isSaved? saveButton:unsaveButton} alt="save article button" />
+      </div>
+        
     <img src={newsCard.imageUrl} alt="article image" className="news-card__image" />
       <div className="news-card__text-container">
       <div className="news-card__content">

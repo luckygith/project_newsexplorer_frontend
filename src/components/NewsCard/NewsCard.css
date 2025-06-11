@@ -18,6 +18,7 @@ list-style-type: none;
  border-radius: 16px;
  display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .news-cards__title {
@@ -30,16 +31,22 @@ height: 272px;
 
 display: flex;
 flex-direction: column;
-gap: 16px;
+/* gap: 16px; */
 flex-grow: 1;
 
+}
+
+.news-card__save-button {
+    width: 40px;
+    height:40px;
+    position: absolute;
+    padding: 24px 24px 0 336px;
 }
 
 .news-card__image{
     max-width: 400px;
     max-height: 272px;
     object-fit: cover;
-
     border-radius: 16px 16px 0 0;
 }
 

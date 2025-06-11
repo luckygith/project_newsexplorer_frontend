@@ -1,0 +1,28 @@
+.profile__content {
+
+background-color: pink;
+position: relative;
+  z-index: 1;
+  top:120px;
+  padding: 40px 104px 56px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  
+}
+
+.profile__title {
+    font-family: "RobotoSlab";
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.profile__subtitle {
+    /* padding-top: 40px; */
+}
+
+.profile__heading{
+    margin: 0;
+    padding:0;
+
+}
