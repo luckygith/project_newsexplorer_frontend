@@ -1,11 +1,8 @@
 .author {
     max-height: 624px;
     max-width: 1440px;
-
 display: flex;
-padding-top:80px;
-padding-bottom: 80px;
-padding: 30px 104px ;
+padding: 80px 104px ;
 }
 
 .author__image {

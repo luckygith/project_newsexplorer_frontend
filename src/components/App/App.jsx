@@ -61,22 +61,22 @@ const handleRegistrationConfirmedClick = () => {
   <div className="page">
     <div className="page__content">
   
-      <Header handleLoginClick={handleLoginClick}
-      />
-      <Navigation />
-      <Main />
-      <About />
-      <Footer />
      
    
 
       <Routes>
-        {/* <Route 
+        <Route 
         path="/"
         element={
-   
+          <>
+          <Header handleLoginClick={handleLoginClick} />
+          <Navigation />
+          <Main />
+          <About />
+          <Footer />
+        </>
         }
-        /> */}
+        />
           <Route 
         path="/saved-routes"
         element={

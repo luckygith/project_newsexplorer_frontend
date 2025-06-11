@@ -1,6 +1,7 @@
 .footer{
     max-width: 1440px;
     height: 80px;
+
 }
 .footer__container {
     display: flex;
@@ -8,12 +9,20 @@
     justify-content: space-between;
     font-family: "Roboto";
     font-weight: 400px;
+    align-items: center;
+    margin: 0 104px;
 }
 
 .footer__text {
     font-size: 16px;
  
     line-height: 22px;
+}
+
+.footer__links {
+display: flex;
+align-items: center;
+
 }
 
 .footer__links-social{
