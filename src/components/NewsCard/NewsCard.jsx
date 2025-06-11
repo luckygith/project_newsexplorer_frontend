@@ -13,6 +13,7 @@ function NewsCard({newsCard}) {
     <li className="news-card">
       <div className='news-card__container'>
       <div className="news-card__header">
+      <button className='news-card__sign-to-save-button'>Sign in to save articles</button>
         <img className='news-card__save-button' src={isSaved? saveButton:unsaveButton} alt="save article button" />
       </div>
         
