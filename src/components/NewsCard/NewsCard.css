@@ -1,38 +1,86 @@
 .news-cards__list {
     display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  justify-content: center;
+gap:16px;
   margin:0;
   padding: 0;
 }
 
 .news-card {
     background-color: #FFFFFF;
-display: flex;
- flex-direction: column;
- height: 576px;
- border-radius: 0 0 16px 16px;
+list-style-type: none;
+ min-height: 576px;
+ border-radius: 16px;
 }
 
 .news-card__container {
-    background-color: blue;
-border: 1px solid ;
 max-width:400px;
-max-height: 272px;
+height: 272px;
+height: 100%;
 display: flex;
 flex-direction: column;
-border-radius: 16px 16px 0 0;
+gap: 16px;
 }
 
 .news-card__image{
-    width: 400px;
-    height: 272px;
-    object-fit: scale-down;
+    max-width: 400px;
+    max-height: 272px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
 }
 
 .news-card__text-container {
-    max-width:400px;
+font-family: "RobotoSlab";
+max-width:400px;
 height: 272px;
+margin: 20px 24px 24px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
 
+.news-card__title {
+font-size: 26px;
+line-height: 30px;
+font-weight: 400;
+margin: 0;
+padding: 0;
+}
+
+.news-card__title {
+
+}
+
+.news-card__description {
+    font-family: "Roboto";
+    max-width: 352px;
+    max-height: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+   
+}
+
+.news-card__date {
+    font-family: "SourceSans3"; /* via google fonts - cannot locate Source sans pro font ? */
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+}
+
+.news-card__category {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    margin-top: auto;
+  
 
 }

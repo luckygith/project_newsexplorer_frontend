@@ -1,9 +1,9 @@
 import React from 'react'
 import '../Preloader/Preloader.css'
 
-const Preloader = () => {
+function Preloader() {
   return (
-    <div>Preloader</div>
+    <div>Searching for news...</div>
   )
 }
 

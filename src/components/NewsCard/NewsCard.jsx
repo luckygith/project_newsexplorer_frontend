@@ -7,8 +7,13 @@ function NewsCard({item}) {
       <div className='news-card__container'>
     <img src={item.imageUrl} alt="article image" className="news-card__image" />
       <div className="news-card__text-container">
-    <h2 className="news-card__title">{item.name}</h2>
-        lorum ipsum
+      <div className="news-card__content">
+
+    <h3 className="news-card__date">{item.publishedAt}</h3>
+    <h2 className="news-card__title">{item.title}</h2>
+    <p className="news-card__description">{item.description}</p>
+      </div>
+     <h3 className="news-card__category">{item.category}</h3>
       </div>
       </div>
     </li>

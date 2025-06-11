@@ -28,7 +28,7 @@ function App() {
   });
  
   const [activeModal, setActiveModal] = useState("")
-  const [clothingItems, setClothingItems] = useState([]);
+  const [newsCards, setNewsCards] = useState([]);
 
 
 
@@ -78,7 +78,7 @@ const handleRegistrationConfirmedClick = () => {
         }
         /> */}
           <Route 
-        path="/profile"
+        path="/saved-routes"
         element={
           <Profile />
         }

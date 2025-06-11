@@ -7,8 +7,8 @@ function Main () {
   return (
 <main className="main">
   
- <h3 className="news-cards__title">Search Results</h3>
   <section className="news-cards__container">
+ <h3 className="news-cards__title">Search Results</h3>
  <ul className="news-cards__list">
 
 {ItemsArray.map((item) => {

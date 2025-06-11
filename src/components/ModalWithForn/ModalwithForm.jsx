@@ -1,10 +1,19 @@
 import React from 'react'
 import '../ModalWithForn/ModalwithForm.css'
 import useModalClose from '../../hooks/modal'
+import useForm from '../../hooks/useForm'
+
 const ModalwithForm = ({onSubmit, title, children, handleCloseModal}) => {
   
+  // const [inputValue, setInputValue] = useState('');
 
+  // const handleChange = (event) => {
+  //   setInputValue(event.target.value);
+  // };
   
+
+
+
   return (
 <div className="modal">
   <div className="modal__content">
