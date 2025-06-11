@@ -12,12 +12,11 @@ function Navigation() {
       <input className="navigation__search-container-input" type="text" placeholder='Enter topic' />
       <button type="submit" className="navigation__search-container-button">
         Search
-    
       </button>
       </div>
     </div>
   </div>
   )
 }
-
+  
 export default Navigation

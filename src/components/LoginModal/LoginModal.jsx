@@ -10,7 +10,8 @@ const LoginModal =({
   handleCloseModal,
   handleLogin,
   handleRegistration,
-  handleRegisterClick
+  handleRegisterClick,
+  isOpen,
 }) => {
 
   const { values, handleChange, setValues, isDisabled } = useForm({
@@ -27,9 +28,8 @@ const LoginModal =({
 
   
   const handleOrRegisterClick = () => {
-    handleRegisterClick()
+    handleRegisterClick();
   };
-
 
 
   return (
@@ -37,6 +37,7 @@ const LoginModal =({
     title="Sign in"
     handleCloseModal={handleCloseModal}
     onSubmit={handleSubmit}
+    isOpen={isOpen}
     >
 <label htmlFor="email" className="modal__label">
   Email{""}

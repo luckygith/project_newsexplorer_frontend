@@ -20,6 +20,10 @@ list-style-type: none;
   flex-direction: column;
 }
 
+.news-cards__title {
+    font-weight: 400;
+}
+
 .news-card__container {
 max-width:400px;
 height: 272px;

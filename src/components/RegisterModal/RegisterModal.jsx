@@ -8,6 +8,7 @@ import useForm from '../../hooks/useForm';
 const RegistrationModal =({
   handleCloseModal,
   handleRegistration,
+  isOpen,
 }) => {
 
   const handleSubmit = (e) => {
@@ -25,6 +26,7 @@ const RegistrationModal =({
     title="Sign up"
     handleCloseModal={handleCloseModal}
     onSubmit={handleSubmit}
+    isOpen={isOpen}
     >
 <label htmlFor="email" className="modal__label">
   Email{""}

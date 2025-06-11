@@ -18,9 +18,10 @@ function Main () {
  <h3 className="news-cards__title">Search Results</h3>
  <ul className="news-cards__list">
 
-{ItemsArray.map((item) => {
+{ItemsArray.map((newsCard) => {
   return(
-    <NewsCard item={item}/>
+    <NewsCard newsCard={newsCard}
+    key={newsCard._id} />
   )
 })}
 

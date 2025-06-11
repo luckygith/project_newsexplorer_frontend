@@ -78,7 +78,7 @@ const handleRegistrationConfirmedClick = () => {
         }
         />
           <Route 
-        path="/saved-routes"
+        path="/saved-news"
         element={
           <Profile />
         }
@@ -93,6 +93,7 @@ const handleRegistrationConfirmedClick = () => {
   handleCloseModal={handleCloseModal}
   handleLogin={handleLogin}
   handleRegistration={handleRegistration}
+  handleRegisterClick={handleRegisterClick}
 />
 )}
 

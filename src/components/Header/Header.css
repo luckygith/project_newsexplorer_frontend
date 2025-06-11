@@ -1,18 +1,27 @@
 .header {
     color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 margin: 0;
 padding: 0;
 position: relative;
-height: 80px;
 line-height: 0;
-padding: 0 104px 0;
 align-items: center;
 line-height: 24px;
-border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+background-color: transparent;
+z-index: 2;
+position: absolute;
+justify-content: space-between;
+max-width: 1440px;
+height: 80px;
+width: 100%;
+}
 
+.header__container {
+    padding: 30px 104px 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header__logo {
@@ -26,7 +35,6 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header__links {
-    
     display: flex;
     align-items: center;
 font-family: "Roboto";
@@ -41,9 +49,7 @@ font-size: 18px;
 
 .header__sign-in-button {
     color: #FFFFFF;
-   
     border-radius: 100px;
-    border-color: pink;
     width: 176px;
     height: 48px;
     background-color: transparent;

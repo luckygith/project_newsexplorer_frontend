@@ -3,14 +3,9 @@ import '../ModalWithForn/ModalwithForm.css'
 import useModalClose from '../../hooks/modal'
 import useForm from '../../hooks/useForm'
 
-const ModalwithForm = ({onSubmit, title, children, handleCloseModal}) => {
-  
-  // const [inputValue, setInputValue] = useState('');
+const ModalwithForm = ({isOpen, onSubmit, title, children, handleCloseModal}) => {
 
-  // const handleChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
-  
+  useModalClose(isOpen, handleCloseModal);
 
 
 
