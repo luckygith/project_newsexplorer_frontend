@@ -16,12 +16,13 @@ width: 100%;
 }
 
 .header__container {
-    padding: 30px 104px 26px;
+
+    padding: 19px 104px 13px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .header__logo {
@@ -40,20 +41,27 @@ width: 100%;
 font-family: "Roboto";
 font-weight: 500;
 font-size: 18px;
+
 }
 
 .header__home-button {
-    color: #FFFFFF;
+
     margin-right: 42px;
+    text-decoration: none;
 }
 
 .header__sign-in-button {
-    color: #FFFFFF;
+
     border-radius: 100px;
     width: 176px;
     height: 48px;
     background-color: transparent;
     cursor: pointer;
     border: 1px solid #FFFFFF; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 
 }

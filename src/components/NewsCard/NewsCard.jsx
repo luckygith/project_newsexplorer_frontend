@@ -3,9 +3,18 @@ import { useState } from 'react'
 import '../NewsCard/NewsCard.css'
 import saveButton from '../../assets/saveButton.svg'
 import unsaveButton from '../../assets/unsaveButton.svg'
+import { useLocation } from 'react-router-dom'
 
 
 function NewsCard({newsCard}) {
+
+  const location = useLocation();
+
+  const savedNewsPagePath = location.pathname === "/saved-news"
+
+  const newsCardsTitleStyle = {
+    visibility: savedNewsPagePath ? "visible" : "hidden",
+  }
 
   const [isSaved, setIsSaved] = useState(newsCard.saved)
 
@@ -22,7 +31,7 @@ function NewsCard({newsCard}) {
       <div className="news-card__content">
 
     <h3 className="news-card__date">{newsCard.publishedAt}</h3>
-    <h2 className="news-card__title">{newsCard.title}</h2>
+    <h2 style={newsCardsTitleStyle} className="news-card__title">{newsCard.title}</h2>
     <p className="news-card__description">{newsCard.description}</p>
       </div>
      <h3 className="news-card__category">{newsCard.category}</h3>

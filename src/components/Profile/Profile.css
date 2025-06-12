@@ -1,12 +1,18 @@
 .profile__content {
 position: relative;
   z-index: 1;
-  top:120px;
-  padding: 40px 104px 56px;
+  top:80px;
+
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 400;
   
+}
+
+.profile__text-container{
+     padding: 40px 104px 56px;
+    background-color: #FFFFFF
+    ;
 }
 
 .profile__title {
@@ -16,7 +22,8 @@ position: relative;
 }
 
 .profile__subtitle {
-    /* padding-top: 40px; */
+    padding: 0;
+    margin: 0;
 }
 
 .profile__heading{
