@@ -11,10 +11,14 @@ function Footer() {
         <div className="footer__container">
 <p className="footer__text">© 2024 Supersite, Powered by News API </p>
 <div className="footer__links">
+    <div className="footer__links-hyperlink-container">
     <Link className='footer__links-hyperlink footer__links-home'>Home</Link>
     <Link className='footer__links-hyperlink footer__links-company`'>Tripleten</Link>
+    </div>
+    <div className="footer__links-social-container">
     <Link className='footer__links-social'> <img src={github} alt="github link" /></Link>
     <Link className='footer__links-social'><img src={fb} alt="facebook link" /></Link>
+    </div>
 </div>
         </div>
     </footer>

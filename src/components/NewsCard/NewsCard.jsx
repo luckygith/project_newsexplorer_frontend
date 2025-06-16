@@ -6,15 +6,11 @@ import unsaveButton from '../../assets/unsaveButton.svg'
 import { useLocation } from 'react-router-dom'
 
 
-function NewsCard({newsCard}) {
+function NewsCard({newsCard, handleLoginClick, handleSaveCard}) {
 
-  const location = useLocation();
-
-  const savedNewsPagePath = location.pathname === "/saved-news"
-
-  const newsCardsTitleStyle = {
-    visibility: savedNewsPagePath ? "visible" : "hidden",
-  }
+ function handleSave() {
+handleSaveCard(newsCard);
+ }
 
   const [isSaved, setIsSaved] = useState(newsCard.saved)
 
@@ -22,8 +18,8 @@ function NewsCard({newsCard}) {
     <li className="news-card">
       <div className='news-card__container'>
       <div className="news-card__header">
-      <button className='news-card__sign-to-save-button'>Sign in to save articles</button>
-        <img className='news-card__save-button' src={isSaved? saveButton:unsaveButton} alt="save article button" />
+      <button className='news-card__sign-to-save-button' onClick={handleLoginClick}>Sign in to save articles</button>
+        <img className='news-card__save-button' src={isSaved? saveButton:unsaveButton}  onClick={handleSave} alt="save article button" />
       </div>
         
     <img src={newsCard.imageUrl} alt="article image" className="news-card__image" />
@@ -31,7 +27,7 @@ function NewsCard({newsCard}) {
       <div className="news-card__content">
 
     <h3 className="news-card__date">{newsCard.publishedAt}</h3>
-    <h2 style={newsCardsTitleStyle} className="news-card__title">{newsCard.title}</h2>
+    <h2 className="news-card__title">{newsCard.title}</h2>
     <p className="news-card__description">{newsCard.description}</p>
       </div>
      <h3 className="news-card__category">{newsCard.category}</h3>

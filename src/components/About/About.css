@@ -1,20 +1,22 @@
 .author {
-    max-height: 624px;
+
     max-width: 1440px;
 display: flex;
 padding: 80px 104px ;
+box-sizing: border-box;
 }
 
 .author__image {
+    position: relative;
 max-width: 464px;
 max-height: 464px;
 border-radius: 1000px;
+/* padding-top: 32px; */
 
 }
 .author__content {
-    width: 600px;
+    max-width: 600px;
     height:120px;
-   
     font-weight: 400;
     margin: 51px 0px 303px 56px;
     line-height: 24px;
@@ -30,5 +32,34 @@ border-radius: 1000px;
 .author__description {
     font-family: "Roboto";
     font-size: 18px;
+
+}
+
+@media screen and (max-width: 1015px) {
+    .author{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .author__content {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .author {
+        max-height: 752px;
+        padding: 32px 16px 128px;
+    }
+
+    .author__image {
+        max-width: 272px;
+        max-height: 272px;
+
+
+    }
 
 }

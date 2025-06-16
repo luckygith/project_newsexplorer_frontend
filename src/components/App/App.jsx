@@ -57,33 +57,40 @@ const handleRegistrationConfirmedClick = () => {
   setActiveModal("registration-confirmed");}
 
 
+const handleSaveCard = () => {
+console.log("save card function set up")
+}
+
+const handleMenuIcon = () => {
+  console.log("Menu icon dropdown")
+}
+
  return (
   <div className="page">
     <div className="page__content">
-  
-     
    
+        <Header handleLoginClick={handleLoginClick} handleMenuIcon={handleMenuIcon}/>
 
       <Routes>
         <Route 
         path="/"
         element={
           <>
-          <Header handleLoginClick={handleLoginClick} />
           <Navigation />
-          <Main />
+          <Main handleLoginClick={handleLoginClick} handleSaveCard={handleSaveCard}/>
           <About />
-          <Footer />
         </>
         }
         />
           <Route 
         path="/saved-news"
         element={
-          <Profile />
+          
+          <Profile handleSaveCard={handleSaveCard}/>
         }
         />
         </Routes> 
+        <Footer />
     </div>
 
 
@@ -113,6 +120,10 @@ handleLoginClick={handleLoginClick}
   handleCloseModal={handleCloseModal}
    />
 )}
+{/* 
+{activeModal === "dropdown-menu" && (
+  
+)} */}
   </div>
   );
 }

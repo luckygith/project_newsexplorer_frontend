@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import '../Header/Header.css';
+import menuIconWhite from '../../assets/menuIconWhite.svg'
+import menuIconBlack from '../../assets/menuIconBlack.svg'
 
-
-function Header ({handleLoginClick}) {
+function Header ({handleLoginClick, handleMenuIcon}) {
 
 const location = useLocation();
 
@@ -18,6 +19,10 @@ const headerContainerStyle = {
   borderBottom: savedNewsPagePath ? "1px solid rgba(0,0,0,0.5)" : "1px solid rgba(255,255,255,0.2)",
 };
 
+const handleMenuIconClick = () => {
+  handleMenuIcon()
+}
+
   return (
     <header className="header" style={headerTextStyle}>
       
@@ -27,15 +32,17 @@ const headerContainerStyle = {
 <p className="header__home-button" to="/">
 Home
 </p>
-{/* <button className="header__sign-in-button" type='button' onClick={handleLoginClick}>
-    Sign in
-</button> */}
 
 <p className="header__sign-in-button" type='button' onClick={handleLoginClick}>
     Sign in
 </p>
 
 </div>
+
+   <button className="header__menu-icon">
+      <img src={savedNewsPagePath? menuIconBlack : menuIconWhite} alt="header drop down menu" onClick={handleMenuIconClick}/>
+    </button>
+
 </div>
 
     </header>

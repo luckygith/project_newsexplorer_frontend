@@ -4,7 +4,7 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-function Profile () {
+function Profile({handleSaveCard}) {
   return (
     <>
 
@@ -16,8 +16,8 @@ function Profile () {
 <p className="profile__heading">By keywords: Nature, Yellowstone, and 2 other</p>
 </div>
 </section>
-    <Main />
-    <Footer />
+    <Main handleSaveCard={handleSaveCard}/>
+ 
     </>
   )
 }

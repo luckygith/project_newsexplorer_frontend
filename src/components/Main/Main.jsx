@@ -7,7 +7,7 @@ import Navigation from '../Navigation/Navigation'
 import About from '../About/About'
 import Footer from '../Footer/Footer'
 
-function Main () {
+function Main ({handleLoginClick, handleSaveCard}) {
 
  const location = useLocation();
  const savedNewsPagePath = location.pathname === "/saved-news"
@@ -19,11 +19,6 @@ function Main () {
 
   return (
 <main className="main">
-
-
-
-
-
   <section className="news-cards__container">
  <h3 style={newsCardsTitleStyle} className="news-cards__title">Search Results</h3>
  <ul className="news-cards__list">
@@ -31,7 +26,8 @@ function Main () {
 {ItemsArray.map((newsCard) => {
   return(
     <NewsCard newsCard={newsCard}
-    key={newsCard._id} />
+    key={newsCard._id} handleLoginClick={handleLoginClick} 
+    handleSaveCard={handleSaveCard}/>
   )
 })}
 
