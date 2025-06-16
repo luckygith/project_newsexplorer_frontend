@@ -1,9 +1,6 @@
 .footer{
     max-width: 1440px;
     position: relative;
-
-
-
 }
 .footer__container {
     display: flex;
@@ -13,22 +10,17 @@
     font-weight: 400px;
     align-items: center;
     margin: 0 104px;
-    background-color: pink;
     box-sizing: border-box;
 }
 
 .footer__text {
     font-size: 16px;
-
     line-height: 22px;
-    background-color: aquamarine;
 }
 
 .footer__links {
 display: flex;
 align-items: center;
-background-color: coral;
-
 }
 
 .footer__links-social{
@@ -37,6 +29,10 @@ background-color: coral;
     width: 24px;
 }
 
+.footer__links-hyperlink-container{
+    display: flex;
+    align-items: center;
+}
 .footer__links-hyperlink {
     margin-right: 40px;
     font-size: 18px;
@@ -60,7 +56,7 @@ background-color: coral;
 }
 
 .footer__text {
-    margin-top: 38px;
+
 }
 }
 
@@ -76,11 +72,6 @@ background-color: coral;
         width: 100%;
         justify-content: space-between;
     }
-    /* .footer__links-social-container {
-        display: flex;
-        flex-direction: row;
-    }
-} */
 
 
 }

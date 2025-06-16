@@ -208,7 +208,6 @@ margin:0;
 @media screen and (max-width: 320px) 
     {
         .news-card {
-            background-color: pink;
             max-width: 288px;
             max-height: 440px;
         }
