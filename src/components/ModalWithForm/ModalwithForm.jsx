@@ -1,5 +1,5 @@
 import React from 'react'
-import '../ModalWithForn/ModalwithForm.css'
+import '../ModalWithForm/ModalwithForm.css'
 import useModalClose from '../../hooks/modal'
 import useForm from '../../hooks/useForm'
 

@@ -151,7 +151,6 @@ margin:0;
 @media screen and (max-width: 768px) {
 
     .news-card {
-    background-color: aqua;
     max-width: 224px;
     max-height: 420px;
     }
@@ -189,7 +188,6 @@ margin:0;
 @media screen and (max-width: 530px) {
 
     .news-card {
-    background-color: aqua;
     max-width: 288px;
     max-height: 440px;
     }

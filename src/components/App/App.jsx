@@ -11,11 +11,12 @@ import Profile from '../Profile/Profile';
 import Navigation from '../Navigation/Navigation';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
-import ModalwithForm from '../ModalWithForn/ModalwithForm';
+import ModalwithForm from '../ModalWithForm/ModalwithForm';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
 import RegistrationConfirmedModal from '../RegistrationConfirmedModal/RegistrationConfirmedModal';
 import NewsCard from '../NewsCard/NewsCard';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
 
 function App() {
 
@@ -50,7 +51,7 @@ const handleRegisterClick = () => {
 
 const handleRegistration = () => {
   handleRegistrationConfirmedClick();
-  console.log("setup REGISTER")
+  console.log("setup REGISTER");
 }
 
 const handleRegistrationConfirmedClick = () => {
@@ -62,7 +63,8 @@ console.log("save card function set up")
 }
 
 const handleMenuIcon = () => {
-  console.log("Menu icon dropdown")
+  console.log("Menu icon dropdown");
+  setActiveModal("dropdown-menu");
 }
 
  return (
@@ -86,7 +88,7 @@ const handleMenuIcon = () => {
         path="/saved-news"
         element={
           
-          <Profile handleSaveCard={handleSaveCard}/>
+          <Profile handleSaveCard={handleSaveCard} handleMenuIcon={handleMenuIcon} handleLoginClick={handleLoginClick}/>
         }
         />
         </Routes> 
@@ -115,15 +117,20 @@ handleLoginClick={handleLoginClick}
 
 {activeModal === "registration-confirmed" && (
   <RegistrationConfirmedModal 
-  isOpen={activeModal === "login"}
-handleLoginClick={handleLoginClick}
+  isOpen={activeModal === "registration-confirmed"}
+  handleLoginClick={handleLoginClick}
   handleCloseModal={handleCloseModal}
    />
 )}
-{/* 
+
 {activeModal === "dropdown-menu" && (
-  
-)} */}
+  <DropdownMenu   
+
+  isOpen={activeModal === "dropdown-menu"}
+  handleLoginClick={handleLoginClick}
+  handleCloseModal={handleCloseModal}
+  />
+)}
   </div>
   );
 }

@@ -2,17 +2,16 @@
 position: relative;
   z-index: 1;
   top:80px;
-
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 400;
-  
+  box-sizing: border-box;
 }
 
 .profile__text-container{
      padding: 40px 104px 56px;
-    background-color: #FFFFFF
-    ;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
 }
 
 .profile__title {
@@ -30,4 +29,29 @@ position: relative;
     margin: 0;
     padding:0;
 
+}
+
+@media screen and (max-width: 530px) {
+    .profile__text-container{
+        padding: 30px 16px 32px;
+    }
+    .profile__subtitle{
+        font-size: 14px;
+    }
+    .profile__title{
+        font-size: 30px;
+    }
+    .profile__content{
+        top: 66px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+   
+    .profile__subtitle{
+        font-size: 12px;
+    }
+    .profile__content{
+        top: 56px;
+    }
 }

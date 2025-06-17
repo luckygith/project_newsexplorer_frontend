@@ -4,11 +4,15 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-function Profile({handleSaveCard}) {
+function Profile({handleSaveCard, handleMenuIcon, handleLoginClick}) {
+
+
+
   return (
     <>
 
-    <Header />
+    <Header
+  handleMenuIcon={handleMenuIcon} handleLoginClick={handleLoginClick}/>
     <section className="profile__content">
       <div className="profile__text-container">
     <p className="profile__subtitle">Saved articles</p>

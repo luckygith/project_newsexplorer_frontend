@@ -1,7 +1,7 @@
 import React from 'react';
 import '../RegisterModal/RegisterModal.css';
 
-import ModalwithForm from '../ModalWithForn/ModalwithForm';
+import ModalwithForm from '../ModalWithForm/ModalwithForm';
 import useForm from '../../hooks/useForm';
 
 

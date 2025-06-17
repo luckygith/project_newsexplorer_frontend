@@ -1,5 +1,5 @@
 import React from 'react'
-import ModalwithForm from '../ModalWithForn/ModalwithForm'
+import ModalwithForm from '../ModalWithForm/ModalwithForm'
 
 const RegistrationConfirmedModal = ({handleCloseModal, handleLoginClick}) => {
   

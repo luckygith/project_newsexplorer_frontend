@@ -1,6 +1,6 @@
 import React from 'react'
 import '../LoginModal/LoginModal.css'
-import ModalwithForm from '../ModalWithForn/ModalwithForm'
+import ModalwithForm from '../ModalWithForm/ModalwithForm'
 import useForm from '../../hooks/useForm'
 import { useState } from 'react'
 

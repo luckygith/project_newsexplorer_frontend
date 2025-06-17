@@ -20,8 +20,8 @@ const headerContainerStyle = {
 };
 
 const handleMenuIconClick = () => {
-  handleMenuIcon()
-}
+  handleMenuIcon();
+};
 
   return (
     <header className="header" style={headerTextStyle}>
@@ -40,7 +40,7 @@ Home
 </div>
 
    <button className="header__menu-icon">
-      <img src={savedNewsPagePath? menuIconBlack : menuIconWhite} alt="header drop down menu" onClick={handleMenuIconClick}/>
+      <img src={savedNewsPagePath ? menuIconBlack : menuIconWhite} alt="header drop down menu" onClick={handleMenuIconClick}/>
     </button>
 
 </div>

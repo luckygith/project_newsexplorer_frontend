@@ -31,8 +31,6 @@ function Main ({handleLoginClick, handleSaveCard}) {
   )
 })}
 
-
-
  </ul>
   </section>
 

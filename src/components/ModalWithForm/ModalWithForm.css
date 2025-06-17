@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    /* visibility: hidden;} */
+
 }
 
 .modal_opened {
@@ -109,4 +109,33 @@ margin-bottom: 31px;
 
 .modal__input-error{
 
+}
+
+
+@media screen and (max-width: 530px) {
+    
+    .modal{
+     
+    }
+.modal__content{
+    max-width: 530px;
+    width: 100%;
+    min-height: 560px;
+    max-height: 560px;
+    position: relative;
+    border-radius: 16px;
+    box-sizing: border-box;
+    top: 56px;
+
+  
+}
+
+.modal__close {
+     
+
+}
+
+.modal__form-submit {
+    font-size: 18px;
+}
 }
