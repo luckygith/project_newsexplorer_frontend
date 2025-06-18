@@ -19,7 +19,7 @@ handleSaveCard(newsCard);
       <div className='news-card__container'>
       <div className="news-card__header">
       <button className='news-card__sign-to-save-button' onClick={handleLoginClick}>Sign in to save articles</button>
-        <img className='news-card__save-button' src={isSaved? saveButton:unsaveButton}  onClick={handleSave} alt="save article button" />
+        <img className='news-card__save-button' onClick={() => handleSave(newsCard)} src={isSaved? saveButton:unsaveButton}  onClick={handleSave} alt="save article button" />
       </div>
         
     <img src={newsCard.imageUrl} alt="article image" className="news-card__image" />
