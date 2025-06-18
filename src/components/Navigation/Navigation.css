@@ -10,6 +10,7 @@ background-repeat: no-repeat;
   display: flex;
   justify-content: center;
 align-items: center;
+box-sizing: border-box;
 }
 
 
@@ -57,7 +58,7 @@ border: none;
 padding-left: 24px;
 padding-right: 180px; 
 max-width: 452px;
-/* width: 100%; */
+box-sizing: border-box;
 border: none;
 margin: 0;
 }
