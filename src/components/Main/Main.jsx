@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import '../Main/Main.css'
 import { ItemsArray } from '../../utils/ItemsArray'
 import NewsCard from '../NewsCard/NewsCard'
-import Navigation from '../Navigation/Navigation'
+import Navigation from '../SearchForm/SearchForm'
 import About from '../About/About'
 import Footer from '../Footer/Footer'
 

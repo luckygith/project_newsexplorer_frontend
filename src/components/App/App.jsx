@@ -1,22 +1,19 @@
 import { useState } from 'react';
-import {Routes, Route} from 'react-router-dom';
-
-import "./App.css";
-
-
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Profile from '../Profile/Profile';
-import Navigation from '../Navigation/Navigation';
+import SearchForm from '../SearchForm/SearchForm';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
-import ModalwithForm from '../ModalWithForm/ModalwithForm';
+import ModalwithForm from '../ModalWithForm/ModalWithForm';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
 import RegistrationConfirmedModal from '../RegistrationConfirmedModal/RegistrationConfirmedModal';
 import NewsCard from '../NewsCard/NewsCard';
-import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import Navigation from '../Navigation/Navigation';
 
 function App() {
 
@@ -78,7 +75,7 @@ const handleMenuIcon = () => {
         path="/"
         element={
           <>
-          <Navigation />
+          <SearchForm />
           <Main handleLoginClick={handleLoginClick} handleSaveCard={handleSaveCard}/>
           <About />
         </>
