@@ -60,8 +60,8 @@ console.log("save card function set up")
 }
 
 const handleMenuIcon = () => {
-  console.log("Menu icon dropdown");
-  setActiveModal("dropdown-menu");
+  console.log("Menu icon navigation");
+  setActiveModal("navigation-menu");
 }
 
  return (
@@ -120,10 +120,10 @@ handleLoginClick={handleLoginClick}
    />
 )}
 
-{activeModal === "dropdown-menu" && (
-  <DropdownMenu   
+{activeModal === "navigation-menu" && (
+  <Navigation   
 
-  isOpen={activeModal === "dropdown-menu"}
+  isOpen={activeModal === "navigation-menu"}
   handleLoginClick={handleLoginClick}
   handleCloseModal={handleCloseModal}
   />

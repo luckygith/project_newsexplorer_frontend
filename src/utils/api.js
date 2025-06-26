@@ -2,9 +2,30 @@ import { baseUrl } from "./constants";
 
 export const APIkey = "6e4c205fce68481b80acc66926ef81e0";
 
+const today = new Date();
+const fromDate = new Date(today);
+fromDate.setDate(today.getDate() - 7);
+
+const to = today.toISOString().split('T')[0]; //splits after year in the string
+const from = fromDate.toISOString().split('T')[0];
+
+  export const checkResponse = (res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+  };
+
+export const fetchArticles = (query) => {
+
+  const url = `${baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${APIkey}`;
+
+  return fetch(url).then(checkResponse);
+};
 
 
-//   const params = new URLSearchParams({
+//   const params = ({
 //     q: searchQuery,
 //     apiKey: apiKey,
 //     from: fromDate,
@@ -14,21 +35,11 @@ export const APIkey = "6e4c205fce68481b80acc66926ef81e0";
   
 //   const url = `${newsApiBaseUrl}?${params.toString()}`;
    
-  export const checkResponse = (res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-  };
 
-  function getClothingItems() {
-    return fetch(`${baseUrl}/items`).then(checkResponse);
-  }
   
-  export function getArticles() {
-    return fetch(`${baseUrl}/articles`).then(checkResponse);
-  }
+  // export function getArticles() {
+  //   return fetch(`${baseUrl}/articles`).then(checkResponse);
+  // }
 
 Create api file
 
@@ -41,6 +52,9 @@ addSavedArticles API
 editArticles API
 
 removeSavedArticles API
+
+
+
 
 
 //   q — what the user entered into the search bar

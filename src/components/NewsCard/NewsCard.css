@@ -22,9 +22,12 @@ flex-grow: 1;
 }
 
 .news-card__header {
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 500;
     position: absolute;
-    width: 400px;
-     padding: 24px 24px 0;
+    max-width: 400px;
+     padding: 24px;
      display: flex;
 justify-content: flex-end;
 box-sizing: border-box;
@@ -49,7 +52,7 @@ top: 0;
   }
    
 .news-card__sign-to-save-button {
-width: 182px;
+max-width: 182px;
 height: 40px;
 background-color: #FFFFFF;
 border-radius: 10px;
