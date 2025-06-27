@@ -7,7 +7,7 @@ export const register = (username, email, password) => {
       return new Promise((resolve, reject) => {
         resolve({
           data: {
-            name: username,
+            username: username,
             email: email,
             _id: "fake-id",
           },
@@ -35,7 +35,7 @@ export const checkToken = (token) => {
       return new Promise((resolve, reject) => {
         resolve({
           data: {
-            name: "name",
+            username: "name",
             email: "email@example.com",
             _id: "fake-id",
           },

@@ -9,7 +9,6 @@ import { useState } from 'react'
 const LoginModal =({
   handleCloseModal,
   handleLogin,
-  handleRegistration,
   handleRegisterClick,
   isOpen,
 }) => {
@@ -22,8 +21,6 @@ const LoginModal =({
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(values); 
-    // onSubmit(values);
-    setValues({ email: "", password: "" })
   };
 
   

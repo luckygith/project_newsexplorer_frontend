@@ -2,12 +2,11 @@ import { baseUrl } from "./constants";
 
 export const APIkey = "6e4c205fce68481b80acc66926ef81e0";
 
-const today = new Date();
-const fromDate = new Date(today);
-fromDate.setDate(today.getDate() - 7);
-
-const to = today.toISOString().split('T')[0]; //splits after year in the string
-const from = fromDate.toISOString().split('T')[0];
+// const today = new Date();
+// const fromDate = new Date(today);
+// fromDate.setDate(today.getDate() - 7);
+// const to = today.toISOString().split('T')[0]; //splits after year in the string
+// const from = fromDate.toISOString().split('T')[0];
 
   export const checkResponse = (res) => {
     if (res.ok) {
@@ -18,13 +17,23 @@ const from = fromDate.toISOString().split('T')[0];
   };
 
 export const fetchArticles = (query) => {
-  // const url = `${baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${APIkey}`;
-  // return fetch(url).then(checkResponse);
-  return Promise.resolve
+
+  return Promise.resolve({
+    articles: [
+      {
+        title: "Fake Article",
+        urlToImage: "https://fake.com/image.jpg",
+        publishedAt: "2025-06-27T00:00:00Z",
+        description: "This is a fake article description.",
+        source: { name: "Fake News Source" },
+      },
+      // You can add more fake articles here
+    ],
+  });
 };
 
 export const getUserInfo = () => {
-  return Promise.resolve({email:"email@example.com", username: "username"});
+  return Promise.resolve({email:"email@example.com", username: "username",  _id: "fake-user-id-123",});
 };
 
 export const addSavedArticles = (article) => {
@@ -35,21 +44,7 @@ export const removeSavedArticles = (articleId) => {
   return Promise.resolve({articleId});
 };
 
-//   const params = ({
-//     q: searchQuery,
-//     apiKey: apiKey,
-//     from: fromDate,
-//     to: toDate,
-//     pageSize: "100"
-//   });
-  
-//   const url = `${newsApiBaseUrl}?${params.toString()}`;
-   
 
-  
-  // export function getArticles() {
-  //   return fetch(`${baseUrl}/articles`).then(checkResponse);
-  // }
 
 // Create api file
 

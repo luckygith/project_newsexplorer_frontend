@@ -45,13 +45,15 @@ top: 0;
 
 }
 
-
-.news-card__header:hover .news-card__sign-to-save-button {
+.news-card__header:hover .news-card__sign-to-save-button,
+.news-card__header:hover .news-card__remove-from-saved{
     visibility: visible;
     opacity: 1;
   }
+
+  
    
-.news-card__sign-to-save-button {
+.news-card__sign-to-save-button  {
 max-width: 182px;
 height: 40px;
 background-color: #FFFFFF;
@@ -60,6 +62,16 @@ border: none;
 margin-right: 5px;
 visibility: hidden;
 }
+
+.news-card__remove-from-saved {
+    max-width: 182px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    margin-right: 5px;
+    visibility: hidden;
+    }
 
 
 

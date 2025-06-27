@@ -3,30 +3,69 @@ import { useState } from 'react';
 import '../NewsCard/NewsCard.css';
 import saveButton from '../../assets/saveButton.svg';
 import unsaveButton from '../../assets/unsaveButton.svg';
+import trash from '../../assets/trash.svg';
 import { useLocation } from 'react-router-dom';
 import { formatDate } from '../../utils/constants';
 
 
-function NewsCard({newsCard, handleLoginClick, handleSaveCard}) {
+function NewsCard({newsCard, handleLoginClick, handleSaveCard, isLoggedIn}) {
 
- function handleSave() {
-handleSaveCard(newsCard);
+
+
+
+ function handleSaveClick() {
+  if (!isLoggedIn) {
+    return;
+  }
+  setIsSaved(!isSaved);
+  handleSaveCard(newsCard);
  }
 
- const formattedPublishedAt = formatDate(newsCard.publishedAt);
+ function handleRemoveClick() {
+  if (!isLoggedIn) {
+    return;
+  }
+  console.log("handleremove clicked");
+ }
+
+  const formattedPublishedAt = formatDate(newsCard.publishedAt);
 
   const [isSaved, setIsSaved] = useState(newsCard.saved);
 
-
+  const location = useLocation();
+  const savedNewsPagePath = location.pathname === "/saved-news"
 
   return (
     <li className="news-card">
       <div className='news-card__container'>
       <div className="news-card__header">
-      <button className='news-card__sign-to-save-button' onClick={handleLoginClick}>Sign in to save articles</button>
-        <img className='news-card__save-button' src={isSaved? saveButton:unsaveButton}  onClick={handleSave} alt="save article button" />
-      </div>
-        
+  {savedNewsPagePath ? (
+    <>
+      <button className='news-card__remove-from-saved'>Remove from saved</button>
+      <img
+        className='news-card__trash-button'
+        src={trash}
+        onClick={handleRemoveClick}
+        alt="remove saved article button"
+      />
+    </>
+  ) : (
+    <>
+    
+        <button className='news-card__sign-to-save-button' onClick={handleLoginClick}>
+          Sign in to save articles
+        </button>
+  
+        <img
+          className='news-card__save-button'
+          src={isSaved ? saveButton : unsaveButton}
+          onClick={handleSaveClick}
+          alt="save article button"
+        />
+    
+    </>
+  )}
+</div>
     <img src={newsCard.urlToImage} alt="article image" className="news-card__image" />
       <div className="news-card__text-container">
       <div className="news-card__content">
@@ -35,7 +74,7 @@ handleSaveCard(newsCard);
     <h2 className="news-card__title">{newsCard.title}</h2>
     <p className="news-card__description">{newsCard.description}</p>
       </div>
-     <h3 className="news-card__category">{newsCard.source.name}</h3>
+     <h3 className="news-card__category">{newsCard.source}</h3>
       </div>
       </div>
     </li>

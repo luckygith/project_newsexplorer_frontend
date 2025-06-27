@@ -14,9 +14,11 @@ import RegisterModal from '../RegisterModal/RegisterModal';
 import RegistrationConfirmedModal from '../RegistrationConfirmedModal/RegistrationConfirmedModal';
 import NewsCard from '../NewsCard/NewsCard';
 import Navigation from '../Navigation/Navigation';
-import { fetchArticles } from '../../utils/api';
+import { fetchArticles, getUserInfo } from '../../utils/api';
 import { authorize, register } from '../../utils/auth';
-import { getToken } from '../../utils/token';
+import { setToken, getToken } from '../../utils/token';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+
 
 function App() {
 
@@ -25,7 +27,7 @@ function App() {
     urlToImage: "",
     publishedAt: "",
     description: "",
-    name: "",
+    source: "",
   });
  
 const [activeModal, setActiveModal] = useState("");
@@ -74,10 +76,11 @@ const handleSearchForm = (query) => {
   };
 
   const handleLoginClick = () => {
-    setActiveModal("login");
+    handleCloseModal(); 
+    setActiveModal("login"); 
   };
 
-const handleLogin = (email, password) => {
+const handleLogin = ({email, password}) => {
   console.log("setup LOGIN");
   setPreloader(true);
   if (!email || !password) {
@@ -85,36 +88,63 @@ const handleLogin = (email, password) => {
     return;
   }
   const token = getToken();
-  authorize(email, password)
+  authorize(email, password, token)
   .then((data) => {
-    data,
-
+    if (data.token) {
+      setToken(data.token); // Save token to local storage
+      console.log(data);
+      // Fetch the user information using the token
+      return getUserInfo(data.token);
+    }
+    throw new Error("JWT not received");
   })
-}
+  .then(({ username, email, _id }) => {
+    // Set the current user with the fetched data
+    setCurrentUser({ username, email, _id });
+    setIsLoggedIn(true);
+    console.log("User data fetched:", { username, email, _id });
+    handleCloseModal();
+  })
+  .catch((error) => {
+    console.error("Error, login request unsuccessful", error);
+  })
+  .finally(() => setPreloader(false));
+};
+  // const token = getToken();
+  // authorize(email, password)
+  // .then((data) => {
+  //   data
+
+  // })
+
 
 const handleRegisterClick = () => {
+  handleCloseModal(); 
   setActiveModal("registration");
 }
 
 const handleRegistration = ({username, email, password}) => {
-setPreloader(True);
-if (!email || !password || !usernamename) {
+  setPreloader(true);
+if (!email || !password || !username) {
   return;
 }
   register(username, email, password)
   .then((data) => {
     if (data) {
+      console.log(data);
+      console.log(email);
       setCurrentUser(data);
       setIsLoggedIn(true);
     }
   })
   .then(() => {
     handleRegistrationConfirmedClick();
+    console.log("registration api on the way!");
   })
   .catch((error) => {
     console.error("Error, registration request unsuccessful", error);
   })
-  .finally(() => setIsLoading(false));
+  .finally(() => setPreloader(false));
 }
 
 
@@ -125,19 +155,20 @@ const handleRegistrationConfirmedClick = () => {
 
 
 const handleSaveCard = () => {
-console.log("save card function set up")
+console.log("save card function to set up")
 }
 
 const handleMenuIcon = () => {
-  console.log("Menu icon navigation");
   setActiveModal("navigation-menu");
 }
 
  return (
+  <CurrentUserContext.Provider value={currentUser}>
   <div className="page">
     <div className="page__content">
    
-        <Header handleLoginClick={handleLoginClick} handleMenuIcon={handleMenuIcon}/>
+        <Header handleLoginClick={handleLoginClick} handleMenuIcon={handleMenuIcon}
+        isLoggedIn={isLoggedIn}/>
 
       <Routes>
         <Route 
@@ -149,6 +180,7 @@ const handleMenuIcon = () => {
                 handleSaveCard={handleSaveCard}
                 newsCards={newsCards}
                 preloader={preloader}
+                isLoggedIn={isLoggedIn}
              />
           <About />
         </>
@@ -158,7 +190,11 @@ const handleMenuIcon = () => {
         path="/saved-news"
         element={
           
-          <Profile handleSaveCard={handleSaveCard} handleMenuIcon={handleMenuIcon} handleLoginClick={handleLoginClick}/>
+          <Profile 
+          handleSaveCard={handleSaveCard} 
+          handleMenuIcon={handleMenuIcon} 
+          handleLoginClick={handleLoginClick}
+          isLoggedIn={isLoggedIn}/>
         }
         />
         </Routes> 
@@ -202,6 +238,7 @@ handleLoginClick={handleLoginClick}
   />
 )}
   </div>
+  </CurrentUserContext.Provider>
   );
 }
 

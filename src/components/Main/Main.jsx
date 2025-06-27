@@ -7,7 +7,7 @@ import Navigation from '../SearchForm/SearchForm'
 import About from '../About/About'
 import Footer from '../Footer/Footer'
 
-function Main ({handleLoginClick, handleSaveCard}) {
+function Main ({handleLoginClick, handleSaveCard, isLoggedIn}) {
 
  const location = useLocation();
  const savedNewsPagePath = location.pathname === "/saved-news"
@@ -29,6 +29,7 @@ function Main ({handleLoginClick, handleSaveCard}) {
     <NewsCard newsCard={newsCard}
     key={newsCard._id} handleLoginClick={handleLoginClick} 
     handleSaveCard={handleSaveCard}
+    isLoggedIn={isLoggedIn}
     />
   )
 })}
