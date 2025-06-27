@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -14,19 +14,58 @@ import RegisterModal from '../RegisterModal/RegisterModal';
 import RegistrationConfirmedModal from '../RegistrationConfirmedModal/RegistrationConfirmedModal';
 import NewsCard from '../NewsCard/NewsCard';
 import Navigation from '../Navigation/Navigation';
+import { fetchArticles } from '../../utils/api';
+import { authorize, register } from '../../utils/auth';
+import { getToken } from '../../utils/token';
 
 function App() {
 
   const [card, setCard] = useState({
     title: "",
-    imageUrl: "",
+    urlToImage: "",
     publishedAt: "",
     description: "",
-    content: "",
+    name: "",
   });
  
-  const [activeModal, setActiveModal] = useState("")
-  const [newsCards, setNewsCards] = useState([]);
+const [activeModal, setActiveModal] = useState("");
+const [currentUser, setCurrentUser] = useState({});
+const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+const [newsCards, setNewsCards] = useState([]);
+ const [searchQuery, setSearchQuery] = useState("");
+ const [preloader, setPreloader] = useState(false);
+
+
+const handleSearchForm = (query) => {
+  if (!query) {
+    console.log("Please type to search articles")
+    setNewsCards([]);
+
+    return;
+  } 
+    setSearchQuery(query);
+    setPreloader(true);
+    fetchArticles(query)
+      .then((res) => {
+        if (res.articles.length === 0) {
+          throw new Error("Nothing Found");
+        }
+      setNewsCards(res.articles);
+      })
+      .catch((error) => {
+        console.error("Sorry, something went wrong during the request. Please try again later.")
+      })
+      .finally(()=> {
+        setPreloader(false);
+      })
+};
+
+// The source name: source.name
+// Publication title: title
+// Publication date: publishedAt
+// Publication description: description
+// Related image: urlToImage
 
 
 
@@ -38,18 +77,48 @@ function App() {
     setActiveModal("login");
   };
 
-const handleLogin = () => {
+const handleLogin = (email, password) => {
   console.log("setup LOGIN");
+  setPreloader(true);
+  if (!email || !password) {
+    console.log("Login incomplete");
+    return;
+  }
+  const token = getToken();
+  authorize(email, password)
+  .then((data) => {
+    data,
+
+  })
 }
 
 const handleRegisterClick = () => {
   setActiveModal("registration");
 }
 
-const handleRegistration = () => {
-  handleRegistrationConfirmedClick();
-  console.log("setup REGISTER");
+const handleRegistration = ({username, email, password}) => {
+setPreloader(True);
+if (!email || !password || !usernamename) {
+  return;
 }
+  register(username, email, password)
+  .then((data) => {
+    if (data) {
+      setCurrentUser(data);
+      setIsLoggedIn(true);
+    }
+  })
+  .then(() => {
+    handleRegistrationConfirmedClick();
+  })
+  .catch((error) => {
+    console.error("Error, registration request unsuccessful", error);
+  })
+  .finally(() => setIsLoading(false));
+}
+
+
+
 
 const handleRegistrationConfirmedClick = () => {
   setActiveModal("registration-confirmed");}
@@ -75,8 +144,12 @@ const handleMenuIcon = () => {
         path="/"
         element={
           <>
-          <SearchForm />
-          <Main handleLoginClick={handleLoginClick} handleSaveCard={handleSaveCard}/>
+          <SearchForm handleSearchForm={handleSearchForm}/>
+          <Main handleLoginClick={handleLoginClick} 
+                handleSaveCard={handleSaveCard}
+                newsCards={newsCards}
+                preloader={preloader}
+             />
           <About />
         </>
         }

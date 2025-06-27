@@ -23,11 +23,13 @@ function Main ({handleLoginClick, handleSaveCard}) {
  <h3 style={newsCardsTitleStyle} className="news-cards__title">Search Results</h3>
  <ul className="news-cards__list">
 
-{ItemsArray.map((newsCard) => {
+{ItemsArray.slice(0,3).map((newsCard) => {
+
   return(
     <NewsCard newsCard={newsCard}
     key={newsCard._id} handleLoginClick={handleLoginClick} 
-    handleSaveCard={handleSaveCard}/>
+    handleSaveCard={handleSaveCard}
+    />
   )
 })}
 

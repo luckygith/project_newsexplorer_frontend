@@ -18,12 +18,22 @@ const from = fromDate.toISOString().split('T')[0];
   };
 
 export const fetchArticles = (query) => {
-
-  const url = `${baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${APIkey}`;
-
-  return fetch(url).then(checkResponse);
+  // const url = `${baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${APIkey}`;
+  // return fetch(url).then(checkResponse);
+  return Promise.resolve
 };
 
+export const getUserInfo = () => {
+  return Promise.resolve({email:"email@example.com", username: "username"});
+};
+
+export const addSavedArticles = (article) => {
+  return Promise.resolve({article});
+};
+
+export const removeSavedArticles = (articleId) => {
+  return Promise.resolve({articleId});
+};
 
 //   const params = ({
 //     q: searchQuery,
@@ -41,17 +51,17 @@ export const fetchArticles = (query) => {
   //   return fetch(`${baseUrl}/articles`).then(checkResponse);
   // }
 
-Create api file
+// Create api file
 
-getUserInfo API
+// getUserInfo API
 
-getArticles API
+// getArticles API
 
-addSavedArticles API
+// addSavedArticles API
 
-editArticles API
+// editArticles API
 
-removeSavedArticles API
+// removeSavedArticles API
 
 
 
