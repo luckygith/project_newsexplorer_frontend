@@ -31,6 +31,8 @@ const headerButtonStyle = {
   border: savedNewsPagePath ? "1px solid rgba(0,0,0,0.5)" : "1px solid rgba(255,255,255,0.2)",
 }
 
+
+
 const handleMenuIconClick = () => {
   handleMenuIcon();
 };
@@ -43,9 +45,10 @@ const handleMenuIconClick = () => {
 <div className="header__container" style={headerContainerStyle}>
 <p className="header__logo">NewsExplorer</p>
 <div className='header__links'>
-<p className="header__home-button" to="/">
+<Link className={`header__home-button ${savedNewsPagePath ? "header__home-button_dark" : "header__home-button_light"}`}
+  to="/">
 Home
-</p>
+</Link>
 {isLoggedIn ? 
 (<>   <p className="header__profile-button" type='button' style={headerButtonStyle}>{currentUser.username}
 <img src={savedNewsPagePath ? logoutDark:logoutLight} alt="" className="header__profile-button-icon" />

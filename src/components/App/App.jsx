@@ -53,10 +53,13 @@ const handleSearchForm = (query) => {
         if (res.articles.length === 0) {
           throw new Error("Nothing Found");
         }
+      console.log(res.articles);
+   
       setNewsCards(res.articles);
       })
       .catch((error) => {
         console.error("Sorry, something went wrong during the request. Please try again later.")
+      console.error(error);
       })
       .finally(()=> {
         setPreloader(false);
@@ -76,7 +79,6 @@ const handleLogin = ({email, password}) => {
   .then((data) => {
     if (data.token) {
       setToken(data.token);
-      setCurrentUser(email, )
       console.log(data);
       return getUserInfo(data.token);
     }
@@ -127,9 +129,9 @@ useEffect(() => {
   if (jwt) {
    
       getUserInfo(jwt)
-      .then(({ name, email, _id }) => {
+      .then(({ username, email, _id }) => {
         setIsLoggedIn(true);
-        setCurrentUser({ name, email, _id });
+        setCurrentUser({ username, email, _id });
       })
       .catch(console.error);
   }
@@ -175,7 +177,7 @@ const handleLoginClick = () => {
         path="/"
         element={
           <>
-          <SearchForm handleSearchForm={handleSearchForm}/>
+          <SearchForm handleSearchForm={handleSearchForm} preloader={preloader}/>
           <Main handleLoginClick={handleLoginClick} 
                 handleSaveCard={handleSaveCard}
                 newsCards={newsCards}
@@ -231,7 +233,6 @@ handleLoginClick={handleLoginClick}
 
 {activeModal === "navigation-menu" && (
   <Navigation   
-
   isOpen={activeModal === "navigation-menu"}
   handleLoginClick={handleLoginClick}
   handleCloseModal={handleCloseModal}

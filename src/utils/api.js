@@ -27,7 +27,7 @@ export const fetchArticles = (query) => {
         description: "This is a fake article description.",
         source: { name: "Fake News Source" },
       },
-      // You can add more fake articles here
+
     ],
   });
 };

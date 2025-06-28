@@ -2,7 +2,6 @@
 color: white;
 margin: 0;
 padding: 0;
-
 line-height: 0;
 align-items: center;
 line-height: 24px;
@@ -54,6 +53,25 @@ width: 100%;
     text-decoration: none;
     
 }
+
+.header__home-button:visited {
+text-decoration: none;
+}
+
+.header__home-button_dark {
+    color: black;
+  }
+  .header__home-button_dark:visited {
+    color: black;
+  }
+  
+  /* For light text (on dark background) */
+  .header__home-button_light {
+    color: white;
+  }
+  .header__home-button_light:visited {
+    color: white;
+  }
 
 .header__sign-in-button {
 
