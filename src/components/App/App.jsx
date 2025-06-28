@@ -38,12 +38,12 @@ const [newsCards, setNewsCards] = useState([]);
  const [searchQuery, setSearchQuery] = useState("");
  const [preloader, setPreloader] = useState(false);
 
+// HANDLERS
 
 const handleSearchForm = (query) => {
   if (!query) {
     console.log("Please type to search articles")
     setNewsCards([]);
-
     return;
   } 
     setSearchQuery(query);
@@ -63,22 +63,6 @@ const handleSearchForm = (query) => {
       })
 };
 
-// The source name: source.name
-// Publication title: title
-// Publication date: publishedAt
-// Publication description: description
-// Related image: urlToImage
-
-
-
-  const handleCloseModal = () => {
-    setActiveModal("");
-  };
-
-  const handleLoginClick = () => {
-    handleCloseModal(); 
-    setActiveModal("login"); 
-  };
 
 const handleLogin = ({email, password}) => {
   console.log("setup LOGIN");
@@ -91,17 +75,17 @@ const handleLogin = ({email, password}) => {
   authorize(email, password, token)
   .then((data) => {
     if (data.token) {
-      setToken(data.token); // Save token to local storage
+      setToken(data.token);
+      setCurrentUser(email, )
       console.log(data);
-      // Fetch the user information using the token
       return getUserInfo(data.token);
     }
-    throw new Error("JWT not received");
+    throw new Error("token not received");
   })
   .then(({ username, email, _id }) => {
-    // Set the current user with the fetched data
     setCurrentUser({ username, email, _id });
     setIsLoggedIn(true);
+    console.log(currentUser.username);
     console.log("User data fetched:", { username, email, _id });
     handleCloseModal();
   })
@@ -110,18 +94,7 @@ const handleLogin = ({email, password}) => {
   })
   .finally(() => setPreloader(false));
 };
-  // const token = getToken();
-  // authorize(email, password)
-  // .then((data) => {
-  //   data
 
-  // })
-
-
-const handleRegisterClick = () => {
-  handleCloseModal(); 
-  setActiveModal("registration");
-}
 
 const handleRegistration = ({username, email, password}) => {
   setPreloader(true);
@@ -133,7 +106,6 @@ if (!email || !password || !username) {
     if (data) {
       console.log(data);
       console.log(email);
-      setCurrentUser(data);
       setIsLoggedIn(true);
     }
   })
@@ -147,20 +119,48 @@ if (!email || !password || !username) {
   .finally(() => setPreloader(false));
 }
 
+// USE EFFECTS
+
+useEffect(() => {
+  const jwt = getToken();
+
+  if (jwt) {
+   
+      getUserInfo(jwt)
+      .then(({ name, email, _id }) => {
+        setIsLoggedIn(true);
+        setCurrentUser({ name, email, _id });
+      })
+      .catch(console.error);
+  }
+}, []);
 
 
-
-const handleRegistrationConfirmedClick = () => {
-  setActiveModal("registration-confirmed");}
-
+// MODAL FUNCTIONS
 
 const handleSaveCard = () => {
-console.log("save card function to set up")
+  console.log("save card function to set up")
 }
+const handleRegistrationConfirmedClick = () => {
+  setActiveModal("registration-confirmed");}
 
 const handleMenuIcon = () => {
   setActiveModal("navigation-menu");
 }
+
+const handleRegisterClick = () => {
+  handleCloseModal(); 
+  setActiveModal("registration");
+}
+
+const handleCloseModal = () => {
+  setActiveModal("");
+};
+
+const handleLoginClick = () => {
+  handleCloseModal(); 
+  setActiveModal("login"); 
+};
 
  return (
   <CurrentUserContext.Provider value={currentUser}>
@@ -168,7 +168,7 @@ const handleMenuIcon = () => {
     <div className="page__content">
    
         <Header handleLoginClick={handleLoginClick} handleMenuIcon={handleMenuIcon}
-        isLoggedIn={isLoggedIn}/>
+        />
 
       <Routes>
         <Route 

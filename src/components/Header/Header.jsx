@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
 import '../Header/Header.css';
 import menuIconWhite from '../../assets/menuIconWhite.svg'
 import menuIconBlack from '../../assets/menuIconBlack.svg'
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Header ({handleLoginClick, handleMenuIcon, isLoggedIn}) {
+function Header ({handleLoginClick, handleMenuIcon}) {
+
+  const currentUser = useContext(CurrentUserContext);
+  const isLoggedIn = currentUser && currentUser.username;
+
 
 const location = useLocation();
 const savedNewsPagePath = location.pathname === "/saved-news"
@@ -38,11 +44,11 @@ const handleMenuIconClick = () => {
 Home
 </p>
 {isLoggedIn ? 
-(<> <p className="header__sign-in-button" type='button' onClick={handleLoginClick}>
+(<>   <p className="header__profile-button" type='button' style={headerButtonStyle}>{currentUser.username}</p>
+</>) : ( <>
+  <p className="header__sign-in-button" type='button' style={headerButtonStyle} onClick={handleLoginClick}>
     Sign in
 </p>
-</>) : ( <>
-  <p className="header__profile-button" type='button' style={headerButtonStyle}></p>
   </>)
 
 }
