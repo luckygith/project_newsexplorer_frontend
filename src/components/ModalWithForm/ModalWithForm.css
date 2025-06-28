@@ -36,14 +36,13 @@
     max-width: 430px;
     width: 100%;
     min-height: 343px;
-
     background-color: #ffffff;
     position: relative;
     border-radius: 16px;
     box-sizing: border-box;
-padding: 34px 36px 28px; 
+    padding: 34px 36px 28px; 
 
-}
+    }
 
 .modal__form-container {
     max-width: 358px;
@@ -92,6 +91,7 @@ border: none;
     border: none;
     background-color: transparent;
     color: #2F71E5;
+    cursor: pointer;
 }
     
 .modal__label {
@@ -114,9 +114,7 @@ margin-bottom: 31px;
 
 @media screen and (max-width: 530px) {
     
-    .modal{
-     
-    }
+ 
 .modal__content{
     max-width: 530px;
     width: 100%;

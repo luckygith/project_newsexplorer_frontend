@@ -62,7 +62,6 @@ const RegistrationModal =({
         <button
           type="submit"
           className="modal__form-submit"
-          // disabled={isLoading || isDisabled}
         >
           Sign up
         </button>

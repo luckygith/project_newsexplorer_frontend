@@ -2,12 +2,15 @@
 
 max-width: 1440px;
 display: flex;
-justify-content: center;
-align-items: center;
 padding: 80px 104px ;
 box-sizing: border-box;
 }
 
+.author__image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .author__image {
     position: relative;
 max-width: 464px;
@@ -17,17 +20,22 @@ border-radius: 1000px;
 }
 .author__content {
     max-width: 600px;
-
     font-weight: 400;
     margin: 51px 0 0 56px;
     line-height: 24px;
-box-sizing: border-box;
+    box-sizing: border-box;
 
 }
 
 .author__title {
     font-family: "RobotoSlab";
     font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 24px;
+    
+
 
 }
 
@@ -35,6 +43,7 @@ box-sizing: border-box;
     font-family: "Roboto";
     font-size: 18px;
     line-height: 24px;
+   
 
 }
 
@@ -45,28 +54,40 @@ gap: 32px;
     }
 
     .author__content {
-        margin: 0;
-        padding: 0;
+        margin-left: 32px;
+        /* margin: 0;
+        padding: 0; */
 margin-bottom: auto;
+box-sizing: border-box;
     }
 
-    .author__title {
+    /* .author__title {
         padding: 0;
         margin: 0;
-    }
+    } */
 
     .author__description {
         max-width: 424px;
         max-height: 168px;
         font-size: 18px;
+        line-height: 24px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .author {
-        
+        max-height: 752px;
+        padding: 32px 16px 128px;
         
     }
+
+    .author__title {
+        font-size: 30px;
+        margin-top: 0;
+    }
+
+   
+
     .author__image {
         max-width: 232px;
         max-height: 232px;
@@ -74,6 +95,7 @@ margin-bottom: auto;
 
     .author__content {
         max-width: 424px;
+        
    
     }
 }
@@ -90,7 +112,9 @@ margin-bottom: auto;
         max-width: 272px;
         max-height: 272px;
 
-
     }
 
+    .author__content {
+
+    }
 }

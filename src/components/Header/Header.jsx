@@ -6,6 +6,9 @@ import '../Header/Header.css';
 import menuIconWhite from '../../assets/menuIconWhite.svg'
 import menuIconBlack from '../../assets/menuIconBlack.svg'
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import logoutLight from '../../assets/logoutLight.svg'
+import logoutDark from '../../assets/logoutDark.svg'
+
 
 function Header ({handleLoginClick, handleMenuIcon}) {
 
@@ -44,10 +47,11 @@ const handleMenuIconClick = () => {
 Home
 </p>
 {isLoggedIn ? 
-(<>   <p className="header__profile-button" type='button' style={headerButtonStyle}>{currentUser.username}</p>
+(<>   <p className="header__profile-button" type='button' style={headerButtonStyle}>{currentUser.username}
+<img src={savedNewsPagePath ? logoutDark:logoutLight} alt="" className="header__profile-button-icon" />
+</p>
 </>) : ( <>
-  <p className="header__sign-in-button" type='button' style={headerButtonStyle} onClick={handleLoginClick}>
-    Sign in
+  <p className="header__sign-in-button" type='button' style={headerButtonStyle} onClick={handleLoginClick}>   Sign in 
 </p>
   </>)
 
