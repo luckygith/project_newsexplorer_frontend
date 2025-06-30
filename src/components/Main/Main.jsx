@@ -1,42 +1,152 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
-import '../Main/Main.css'
-import { ItemsArray } from '../../utils/ItemsArray'
-import NewsCard from '../NewsCard/NewsCard'
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import "../Main/Main.css";
 
+import NewsCard from "../NewsCard/NewsCard";
+import preloaderIcon from "../../assets/preloaderIcon.svg";
+import notFound from "../../assets/notFound.svg";
+import { ItemsArray } from "../../utils/ItemsArray";
 
-function Main ({handleLoginClick, handleSaveCard, isLoggedIn}) {
+function Main({
+	handleLoginClick,
+	handleSaveCard,
+	isLoggedIn,
+	preloader,
+	// newsCards,
+	// handleNewsCardsButton,
+}) {
+	const location = useLocation();
+	const savedNewsPagePath = location.pathname === "/saved-news";
 
- const location = useLocation();
- const savedNewsPagePath = location.pathname === "/saved-news"
- const newsCardsTitleStyle = {
-    visibility: savedNewsPagePath ? "hidden" : "visible",
-  }
+	const newsCardsTitleStyle = {
+		visibility: savedNewsPagePath ? "hidden" : "visible",
+	};
 
+	const [count, setCount] = useState(3);
 
+	const handleNewsCardsButtonClick = () => {
+		handleNewsCardsButton();
+	};
 
-  return (
-<main className="main">
-  <section className="news-cards__container">
- <h3 style={newsCardsTitleStyle} className="news-cards__title">Search Results</h3>
- <ul className="news-cards__list">
+	const handleNewsCardsButton = () => {
+		console.log("handle news cards button function");
+		setCount((count) => count + 3);
+		console.log(count);
+	};
 
-{ItemsArray.slice(0,3).map((newsCard) => {
+	return (
+		// <main className="main">
+		//   <section className="news-cards__container">
 
-  return(
-    <NewsCard newsCard={newsCard}
-    key={newsCard._id} handleLoginClick={handleLoginClick} 
-    handleSaveCard={handleSaveCard}
-    isLoggedIn={isLoggedIn}
-    />
-  )
-})}
+		//     <div className="news-cards__preloader-section">
+		//       {!isLoggedIn ? (
+		//         <div className="stuff">Sign in to see saved articles</div>
+		//       ) : preloader ? (
+		//         <>
+		//           <img className="news-cards__preloader-icon" src={preloaderIcon} alt="loading icon" />
+		//           <p className="news-cards__preloader-text">Searching for news...</p>
+		//         </>
+		//       ) : ItemsArray.length === 0 ? (
+		//         <>
+		//           <img src={notFound} alt="nothing found icon" />
+		//           <p className="news-cards__preloader-title">Nothing found</p>
+		//           <p className="news-cards__preloader-text">
+		//             Sorry, but nothing matched your search terms.
+		//           </p>
+		//         </>
+		//       ) : null}
+		//     </div>
 
- </ul>
-  </section>
+		//     {isLoggedIn && ItemsArray.length > 0 && (<>
+		//               <h3 style={newsCardsTitleStyle} className="news-cards__title">Search Results</h3>
 
-</main>
-  )
+		//       <ul className="news-cards__list">
+		//         {ItemsArray.slice(0, 3).map((newsCard, index) => (
+		//           <NewsCard
+		//             newsCard={newsCard}
+		//             key={newsCard._id || index}
+		//             handleLoginClick={handleLoginClick}
+		//             handleSaveCard={handleSaveCard}
+		//             isLoggedIn={isLoggedIn}
+		//           />
+		//         ))}
+		//       </ul>
+		//       </> )}
+
+		//   </section>
+		// </main>
+
+		<main className="main">
+			<section className="news-cards__container">
+				{preloader ? (
+					<>
+						{" "}
+						<img
+							className="news-cards__preloader-icon"
+							src={preloaderIcon}
+							alt="loading icon"
+						/>
+						<p className="news-cards__preloader-text">
+							Searching for news...
+						</p>{" "}
+					</>
+				) : (
+					<>
+						<div className="news-cards__section">
+							<h3
+								style={newsCardsTitleStyle}
+								className="news-cards__title"
+							>
+								Search Results
+							</h3>
+							<ul className="news-cards__list">
+								{ItemsArray.length === 0 ? (
+									isLoggedIn ? (
+										<>
+											<div className="news-cards__search-empty">
+												<img
+													src={notFound}
+													alt="nothing found icon"
+												/>
+												<p className="news-cards__preloader-title">
+													Nothing found
+												</p>
+												<p className="news-cards__preloader-text">
+													Sorry, but nothing matched your search terms.
+												</p>
+											</div>
+										</>
+									) : null
+								) : (
+									<>
+										{ItemsArray.slice(0, count).map((newsCard, index) => (
+											<NewsCard
+												newsCard={newsCard}
+												key={newsCard._id}
+												handleLoginClick={handleLoginClick}
+												handleSaveCard={handleSaveCard}
+												isLoggedIn={isLoggedIn}
+											/>
+										))}
+									</>
+								)}
+							</ul>
+						</div>
+					</>
+				)}
+				<div className="news-cards__extension">
+					<button
+						className="news-cards__extensions-button"
+						type="button"
+						onClick={handleNewsCardsButtonClick}
+					>
+						Show more
+					</button>
+				</div>
+			</section>
+		</main>
+	);
 }
 
-export default Main
+export default Main;

@@ -10,7 +10,7 @@ import logoutLight from '../../assets/logoutLight.svg'
 import logoutDark from '../../assets/logoutDark.svg'
 
 
-function Header ({handleLoginClick, handleMenuIcon}) {
+function Header ({handleLoginClick, handleMenuIcon, handleLogout}) {
 
   const currentUser = useContext(CurrentUserContext);
   const isLoggedIn = currentUser && currentUser.username;
@@ -37,10 +37,14 @@ const handleMenuIconClick = () => {
   handleMenuIcon();
 };
 
+const handleLogoutClick = () => {
+  console.log("handleLogoutClick");
+  handleLogout();
+};
 
 
   return (
-    <header className="header" style={headerTextStyle}>
+<header className="header" style={headerTextStyle}>
       
 <div className="header__container" style={headerContainerStyle}>
 <p className="header__logo">NewsExplorer</p>
@@ -51,7 +55,7 @@ Home
 </Link>
 {isLoggedIn ? 
 (<>   <p className="header__profile-button" type='button' style={headerButtonStyle}>{currentUser.username}
-<img src={savedNewsPagePath ? logoutDark:logoutLight} alt="" className="header__profile-button-icon" />
+<img src={savedNewsPagePath ? logoutDark:logoutLight} alt="" className="header__profile-button-icon" onClick={handleLogoutClick}/>
 </p>
 </>) : ( <>
   <p className="header__sign-in-button" type='button' style={headerButtonStyle} onClick={handleLoginClick}>   Sign in 
