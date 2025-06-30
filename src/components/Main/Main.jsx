@@ -135,15 +135,18 @@ function Main({
 						</div>
 					</>
 				)}
-				<div className="news-cards__extension">
-					<button
-						className="news-cards__extensions-button"
-						type="button"
-						onClick={handleNewsCardsButtonClick}
-					>
-						Show more
-					</button>
-				</div>
+
+				{count < ItemsArray.length && (
+					<div className="news-cards__extension">
+						<button
+							className="news-cards__extensions-button"
+							type="button"
+							onClick={handleNewsCardsButtonClick}
+						>
+							Show more
+						</button>
+					</div>
+				)}
 			</section>
 		</main>
 	);
