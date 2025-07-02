@@ -13,8 +13,8 @@ function Main({
 	handleSaveCard,
 	isLoggedIn,
 	preloader,
-	// newsCards,
-	// handleNewsCardsButton,
+	newsCard,
+	handleRemoveCard,
 }) {
 	const location = useLocation();
 	const savedNewsPagePath = location.pathname === "/saved-news";
@@ -127,6 +127,7 @@ function Main({
 												handleLoginClick={handleLoginClick}
 												handleSaveCard={handleSaveCard}
 												isLoggedIn={isLoggedIn}
+												handleRemoveCard={handleRemoveCard}
 											/>
 										))}
 									</>

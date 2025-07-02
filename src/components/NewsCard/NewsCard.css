@@ -197,6 +197,12 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.news-card__trash-button {
+	height: 40px;
+	width: 40px;
+}
+
 .news-cards__extensions-button {
 	border-radius: 100px;
 	right: 0px;

@@ -20,7 +20,7 @@ import { setToken, getToken, removeToken } from "../../utils/token";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function App() {
-	const [card, setCard] = useState({
+	const [NewNewsCard, setNewNewsCard] = useState({
 		title: "",
 		urlToImage: "",
 		publishedAt: "",
@@ -35,6 +35,7 @@ function App() {
 	const [newsCards, setNewsCards] = useState([]);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [preloader, setPreloader] = useState(false);
+	const [newsCard, setNewsCard] = useState([]);
 
 	// const [count, setCount] = useState(3);
 
@@ -120,6 +121,14 @@ function App() {
 			.finally(() => setPreloader(false));
 	};
 
+	const handleRemoveCard = (newsCard) => {
+		console.log("handle Remove Card from app");
+	};
+
+	const handleAddCard = (newsCard) => {
+		console.log("handle Add Card");
+	};
+
 	// USE EFFECTS
 
 	useEffect(() => {
@@ -137,9 +146,12 @@ function App() {
 
 	// MODAL FUNCTIONS
 
-	const handleSaveCard = () => {
+	const handleSaveCard = (newsCard) => {
 		console.log("save card function to set up");
+		setNewsCards((prevCards) => [newsCard, ...prevCards]);
+		console.log(newsCard, "saved");
 	};
+
 	const handleRegistrationConfirmedClick = () => {
 		setActiveModal("registration-confirmed");
 	};
@@ -162,8 +174,7 @@ function App() {
 		setActiveModal("login");
 	};
 
-	const handleLogout = () => {
-		const token = getToken();
+	const handleLogout = (token) => {
 		setIsLoggedIn(false);
 		setCurrentUser({});
 		removeToken(token);
@@ -182,6 +193,7 @@ function App() {
 						handleLoginClick={handleLoginClick}
 						handleMenuIcon={handleMenuIcon}
 						handleLogout={handleLogout}
+						handleLogin={handleLogin}
 					/>
 
 					<Routes>
@@ -200,6 +212,8 @@ function App() {
 										preloader={preloader}
 										isLoggedIn={isLoggedIn}
 										handleNewsCardsButton={handleNewsCardsButton}
+										handleRemoveCard={handleRemoveCard}
+										newsCard={newsCard}
 									/>
 									<About />
 								</>
@@ -213,6 +227,7 @@ function App() {
 									handleMenuIcon={handleMenuIcon}
 									handleLoginClick={handleLoginClick}
 									isLoggedIn={isLoggedIn}
+									handleLogout={handleLogout}
 								/>
 							}
 						/>
