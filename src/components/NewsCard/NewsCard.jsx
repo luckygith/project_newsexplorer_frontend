@@ -17,11 +17,13 @@ function NewsCard({
 }) {
 	const currentUser = useContext(CurrentUserContext);
 	const isLoggedIn = currentUser && currentUser.username;
+	const [isSaved, setIsSaved] = useState(false);
 
 	function handleSaveClick() {
 		if (!isLoggedIn) {
 			return;
 		}
+
 		setIsSaved(!isSaved);
 		handleSaveCard(newsCard);
 	}
@@ -35,8 +37,6 @@ function NewsCard({
 	}
 
 	const formattedPublishedAt = formatDate(newsCard.publishedAt);
-
-	const [isSaved, setIsSaved] = useState(newsCard.saved);
 
 	const location = useLocation();
 	const savedNewsPagePath = location.pathname === "/saved-news";
@@ -74,7 +74,7 @@ function NewsCard({
 							<img
 								className="news-card__save-button"
 								src={isSaved ? saveButton : unsaveButton}
-								onClick={isLoggedIn ? handleSaveClick : undefined}
+								onClick={isLoggedIn ? handleSaveClick : null}
 								alt="save article button"
 							/>
 						</>
@@ -91,7 +91,7 @@ function NewsCard({
 						<h2 className="news-card__title">{newsCard.title}</h2>
 						<p className="news-card__description">{newsCard.description}</p>
 					</div>
-					<h3 className="news-card__category">{newsCard.source}</h3>
+					<h3 className="news-card__category">{newsCard.source.name}</h3>
 				</div>
 			</div>
 		</li>

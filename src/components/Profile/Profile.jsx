@@ -10,6 +10,8 @@ function Profile({
 	handleLoginClick,
 	handleLogout,
 	isLoggedIn,
+	savedNewsCards,
+	handleRemoveCard,
 }) {
 	return (
 		<>
@@ -28,7 +30,11 @@ function Profile({
 					</p>
 				</div>
 			</section>
-			<Main handleSaveCard={handleSaveCard} />
+			<Main
+				handleSaveCard={handleSaveCard}
+				savedNewsCards={savedNewsCards}
+				handleRemoveCard={handleRemoveCard}
+			/>
 		</>
 	);
 }

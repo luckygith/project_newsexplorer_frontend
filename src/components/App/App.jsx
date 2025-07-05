@@ -14,13 +14,18 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import RegistrationConfirmedModal from "../RegistrationConfirmedModal/RegistrationConfirmedModal";
 import NewsCard from "../NewsCard/NewsCard";
 import Navigation from "../Navigation/Navigation";
-import { fetchArticles, getUserInfo } from "../../utils/api";
+import {
+	addSavedArticle,
+	fetchArticles,
+	fetchSavedArticles,
+	getUserInfo,
+} from "../../utils/api";
 import { authorize, register } from "../../utils/auth";
 import { setToken, getToken, removeToken } from "../../utils/token";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function App() {
-	const [NewNewsCard, setNewNewsCard] = useState({
+	const [newsCard, setNewsCard] = useState({
 		title: "",
 		urlToImage: "",
 		publishedAt: "",
@@ -31,13 +36,10 @@ function App() {
 	const [activeModal, setActiveModal] = useState("");
 	const [currentUser, setCurrentUser] = useState({});
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+	const [savedNewsCards, setSavedNewsCards] = useState([]);
 	const [newsCards, setNewsCards] = useState([]);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [preloader, setPreloader] = useState(false);
-	const [newsCard, setNewsCard] = useState([]);
-
-	// const [count, setCount] = useState(3);
 
 	// HANDLERS
 
@@ -56,6 +58,7 @@ function App() {
 				}
 				console.log(res.articles);
 				setNewsCards(res.articles);
+				console.log(query);
 			})
 			.catch((error) => {
 				console.error(
@@ -121,16 +124,59 @@ function App() {
 			.finally(() => setPreloader(false));
 	};
 
+	// NEWS CARD FUNCTIONS
+
 	const handleRemoveCard = (newsCard) => {
-		console.log("handle Remove Card from app");
+		// Filter out the article with the same title
+		const newsCardToRemove = savedNewsCards.filter(
+			(card) => card.title !== newsCard.title
+		);
+		setSavedNewsCards(newsCardToRemove);
+		localStorage.setItem("savedArticles", JSON.stringify(updated));
+		console.log("REMOVED ARTICLE:", newsCard.title);
 	};
 
-	const handleAddCard = (newsCard) => {
-		console.log("handle Add Card");
+	const handleSaveCard = (newsCard) => {
+		const jwt = getToken();
+
+		const isDuplicateCard = savedNewsCards.some(
+			(cardToSave) => cardToSave.title === newsCard.title
+		);
+		if (isDuplicateCard) {
+			console.log("This article is already saved.");
+			return;
+		}
+
+		addSavedArticle(newsCard)
+			.then(({ article }) => {
+				console.log(article);
+				setNewsCard({
+					title: newsCard.title,
+					urlToImage: newsCard.urlToImage,
+					publishedAt: newsCard.publishedAt,
+					description: newsCard.description,
+					source: newsCard.source.name,
+					jwt,
+				});
+				setSavedNewsCards((prevSaved) => {
+					// PREVSAVED MOST UPDATED ARRAY
+					const updated = [newsCard, ...prevSaved]; // CREATES NEW ARRAY WITH ADDING NEW NEWSCARD CARD FIRST
+					localStorage.setItem("savedArticles", JSON.stringify(updated)); // STORE ARRAY AS STRING
+					return updated; // RETURNING UPDATED ARRAY TO UPDATE STATE
+				});
+				console.log("Saved article:", newsCard);
+			})
+			.catch((err) => {
+				console.error("Failed to save article:", err);
+			})
+			.finally(() => {
+				console.log("handlesavedcard finally block");
+			});
 	};
 
 	// USE EFFECTS
 
+	// is user logged in
 	useEffect(() => {
 		const jwt = getToken();
 
@@ -144,13 +190,48 @@ function App() {
 		}
 	}, []);
 
-	// MODAL FUNCTIONS
+	// saved news cards
+	useEffect(() => {
+		console.log("Updated savedNewsCards:", savedNewsCards);
+	}, [savedNewsCards]);
 
-	const handleSaveCard = (newsCard) => {
-		console.log("save card function to set up");
-		setNewsCards((prevCards) => [newsCard, ...prevCards]);
-		console.log(newsCard, "saved");
-	};
+	// news cards as per login
+	useEffect(() => {
+		const jwt = getToken();
+		if (!jwt) return;
+
+		fetchArticles()
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.error("Error fetching saved articles:", err);
+			});
+	}, []);
+
+	// saved newscards as per login
+	useEffect(() => {
+		const jwt = getToken();
+		if (!jwt) return;
+
+		fetchSavedArticles()
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.error("Error fetching saved articles:", err);
+			});
+	}, [isLoggedIn]);
+
+	// get currently stored news cards
+	useEffect(() => {
+		const storedNewsCards = localStorage.getItem("storedNewsCards");
+		if (storedNewsCards) {
+			setSavedNewsCards(JSON.parse(storedNewsCards));
+		}
+	}, []);
+
+	// HANDLERS
 
 	const handleRegistrationConfirmedClick = () => {
 		setActiveModal("registration-confirmed");
@@ -214,6 +295,7 @@ function App() {
 										handleNewsCardsButton={handleNewsCardsButton}
 										handleRemoveCard={handleRemoveCard}
 										newsCard={newsCard}
+										savedNewsCards={savedNewsCards}
 									/>
 									<About />
 								</>
@@ -223,11 +305,14 @@ function App() {
 							path="/saved-news"
 							element={
 								<Profile
+									newsCards={newsCards}
+									savedNewsCards={savedNewsCards}
 									handleSaveCard={handleSaveCard}
 									handleMenuIcon={handleMenuIcon}
 									handleLoginClick={handleLoginClick}
 									isLoggedIn={isLoggedIn}
 									handleLogout={handleLogout}
+									handleRemoveCard={handleRemoveCard}
 								/>
 							}
 						/>
