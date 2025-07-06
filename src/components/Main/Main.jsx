@@ -97,7 +97,7 @@ function Main({
 									) : null
 								) : (
 									<>
-										{ItemsArray.slice(0, count).map((newsCard, index) => (
+										{newsCards.slice(0, count).map((newsCard, index) => (
 											<NewsCard
 												newsCards={newsCards}
 												newsCard={newsCard}

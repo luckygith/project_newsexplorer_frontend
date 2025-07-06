@@ -58,7 +58,7 @@ function App() {
 				}
 				console.log(res.articles);
 				setNewsCards(res.articles);
-				console.log(query);
+				console.log(res.articles);
 			})
 			.catch((error) => {
 				console.error(
@@ -132,7 +132,7 @@ function App() {
 			(card) => card.title !== newsCard.title
 		);
 		setSavedNewsCards(newsCardToRemove);
-		localStorage.setItem("savedArticles", JSON.stringify(updated));
+		localStorage.setItem("storedNewsCards", JSON.stringify(newsCardToRemove));
 		console.log("REMOVED ARTICLE:", newsCard.title);
 	};
 
@@ -161,7 +161,7 @@ function App() {
 				setSavedNewsCards((prevSaved) => {
 					// PREVSAVED MOST UPDATED ARRAY
 					const updated = [newsCard, ...prevSaved]; // CREATES NEW ARRAY WITH ADDING NEW NEWSCARD CARD FIRST
-					localStorage.setItem("savedArticles", JSON.stringify(updated)); // STORE ARRAY AS STRING
+					localStorage.setItem("storedNewsCards", JSON.stringify(updated)); // STORE ARRAY AS STRING
 					return updated; // RETURNING UPDATED ARRAY TO UPDATE STATE
 				});
 				console.log("Saved article:", newsCard);
