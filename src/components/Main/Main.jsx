@@ -18,6 +18,7 @@ function Main({
 	newsCards,
 	handleRemoveCard,
 	savedNewsCards,
+	isSearched,
 }) {
 	const currentUser = useContext(CurrentUserContext);
 
@@ -71,12 +72,15 @@ function Main({
 				) : (
 					<>
 						<div className="news-cards__section">
-							<h3
-								style={newsCardsTitleStyle}
-								className="news-cards__title"
-							>
-								Search Results
-							</h3>
+							{isSearched && (
+								<h3
+									style={newsCardsTitleStyle}
+									className="news-cards__title"
+								>
+									Search Results
+								</h3>
+							)}
+
 							<ul className="news-cards__list">
 								{ItemsArray.length === 0 ? (
 									isLoggedIn ? (
@@ -115,7 +119,7 @@ function Main({
 					</>
 				)}
 
-				{count < ItemsArray.length && (
+				{count < newsCards.length && (
 					<div className="news-cards__extension">
 						<button
 							className="news-cards__extensions-button"

@@ -40,6 +40,7 @@ function App() {
 	const [newsCards, setNewsCards] = useState([]);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [preloader, setPreloader] = useState(false);
+	const [isSearched, setIsSearched] = useState(false);
 
 	// HANDLERS
 
@@ -50,6 +51,7 @@ function App() {
 			return;
 		}
 		setSearchQuery(query);
+		setIsSearched(true);
 		setPreloader(true);
 		fetchArticles(query)
 			.then((res) => {
@@ -59,12 +61,15 @@ function App() {
 				console.log(res.articles);
 				setNewsCards(res.articles);
 				console.log(res.articles);
+				setIsSearched(true);
+				console.log(isSearched);
 			})
 			.catch((error) => {
 				console.error(
 					"Sorry, something went wrong during the request. Please try again later."
 				);
 				console.error(error);
+				setIsSearched(false);
 			})
 			.finally(() => {
 				setPreloader(false);
@@ -203,6 +208,7 @@ function App() {
 		fetchArticles()
 			.then((res) => {
 				console.log(res);
+				console.log(isSearched);
 			})
 			.catch((err) => {
 				console.error("Error fetching saved articles:", err);
@@ -296,6 +302,7 @@ function App() {
 										handleRemoveCard={handleRemoveCard}
 										newsCard={newsCard}
 										savedNewsCards={savedNewsCards}
+										isSearched={isSearched}
 									/>
 									<About />
 								</>

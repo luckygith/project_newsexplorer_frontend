@@ -65,40 +65,7 @@ export const fetchArticles = (query) => {
 
 export const fetchSavedArticles = () => {
 	return Promise.resolve({
-		articles: [
-			{
-				_id: 4,
-				title: "Fake SAVED Article",
-				urlToImage: "https://fake.com/image.jpg",
-				publishedAt: "2025-06-25T00:00:00Z",
-				description: "This is a fake article description.",
-				source: { name: "national geographic" },
-			},
-			{
-				_id: 5,
-				title: "Fake SAVED Article 2 ",
-				urlToImage: "https://fake.com/imagesf.jpg",
-				publishedAt: "2025-06-27T00:00:00Z",
-				description: "This is another fake article description.",
-				source: { name: "treehugger" },
-			},
-			{
-				_id: 6,
-				title: "Fake SAVED Article 3",
-				urlToImage: "https://fake.com/image.jpg",
-				publishedAt: "2025-06-29T00:00:00Z",
-				description: "Lorem Ipsum so and so.",
-				source: { name: "national geographic" },
-			},
-			{
-				_id: 7,
-				title: "Fake SAVED Article ",
-				urlToImage: "https://fake.com/image.jpg",
-				publishedAt: "2025-06-30T00:00:00Z",
-				description: "When the moon hits the sky like a big pizza pie.",
-				source: { name: "national parks traveler" },
-			},
-		],
+		articles: [],
 	});
 };
 
@@ -137,3 +104,36 @@ export const removeSavedArticles = (article) => {
 //   pageSize — the maximum allowed array. Set it to 100 articles (max in the free version).
 
 // Your API key is: 6e4c205fce68481b80acc66926ef81e0
+
+// {
+//   _id: 4,
+//   title: "Fake SAVED Article",
+//   urlToImage: "https://fake.com/image.jpg",
+//   publishedAt: "2025-06-25T00:00:00Z",
+//   description: "This is a fake article description.",
+//   source: { name: "national geographic" },
+// },
+// {
+//   _id: 5,
+//   title: "Fake SAVED Article 2 ",
+//   urlToImage: "https://fake.com/imagesf.jpg",
+//   publishedAt: "2025-06-27T00:00:00Z",
+//   description: "This is another fake article description.",
+//   source: { name: "treehugger" },
+// },
+// {
+//   _id: 6,
+//   title: "Fake SAVED Article 3",
+//   urlToImage: "https://fake.com/image.jpg",
+//   publishedAt: "2025-06-29T00:00:00Z",
+//   description: "Lorem Ipsum so and so.",
+//   source: { name: "national geographic" },
+// },
+// {
+//   _id: 7,
+//   title: "Fake SAVED Article ",
+//   urlToImage: "https://fake.com/image.jpg",
+//   publishedAt: "2025-06-30T00:00:00Z",
+//   description: "When the moon hits the sky like a big pizza pie.",
+//   source: { name: "national parks traveler" },
+// },
