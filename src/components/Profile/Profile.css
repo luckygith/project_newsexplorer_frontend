@@ -1,57 +1,71 @@
 .profile__content {
-position: relative;
-  z-index: 1;
-  top:80px;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 400;
-  box-sizing: border-box;
+	position: relative;
+	z-index: 1;
+	top: 80px;
+	font-family: "Roboto";
+	font-size: 18px;
+	font-weight: 400;
+	box-sizing: border-box;
 }
 
-.profile__text-container{
-     padding: 40px 104px 56px;
-    background-color: #FFFFFF;
-    box-sizing: border-box;
+.profile__text-container {
+	padding: 40px 104px 56px;
+	background-color: #ffffff;
+	box-sizing: border-box;
 }
 
 .profile__title {
-    font-family: "RobotoSlab";
-    font-weight: 400;
-    font-size: 40px;
+	font-family: "RobotoSlab";
+	font-weight: 400;
+	font-size: 40px;
 }
 
 .profile__subtitle {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
-.profile__heading{
-    margin: 0;
-    padding:0;
+.profile__heading {
+	margin: 0;
+	padding: 0;
+}
 
+.profile__saved-cards {
+	max-width: 1440px;
+	background-color: #f5f6f7;
+	padding: 0;
+	margin: 0;
+	padding: 80px 104px;
+}
+
+.profile__news-cards-container {
+	max-width: 400px;
+	height: 272px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 @media screen and (max-width: 530px) {
-    .profile__text-container{
-        padding: 30px 16px 32px;
-    }
-    .profile__subtitle{
-        font-size: 14px;
-    }
-    .profile__title{
-        font-size: 30px;
-    }
-    .profile__content{
-        top: 66px;
-    }
+	.profile__text-container {
+		padding: 30px 16px 32px;
+	}
+	.profile__subtitle {
+		font-size: 14px;
+	}
+	.profile__title {
+		font-size: 30px;
+	}
+	.profile__content {
+		top: 66px;
+	}
 }
 
 @media screen and (max-width: 320px) {
-   
-    .profile__subtitle{
-        font-size: 12px;
-    }
-    .profile__content{
-        top: 56px;
-    }
+	.profile__subtitle {
+		font-size: 12px;
+	}
+	.profile__content {
+		top: 56px;
+	}
 }
