@@ -1,3 +1,17 @@
+# Welcome to my project demonstration, NewsExplorer
+
+Technologies and techniques used in this project includes:
+
+Javascript
+React and Redux
+Authorization and authentication
+Responsive design
+
+![Login modal](image-1.png)
+![Main page](image-3.png)
+![Tablet view](image-4.png)
+![Mobile view](image-5.png)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
