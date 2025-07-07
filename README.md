@@ -3,8 +3,11 @@
 Technologies and techniques used in this project includes:
 
 Javascript
+
 React
-Redux
+
+Redux - use for state specific design for current page identifier and API data object organization for save and delete card function
+
 Authorization and authentication
 
 HTML and CSS - in collaboration with Redux, demonstrates the use of state specific js design allowing a contrast between light and dark theme for two separate pages with similarly displayed components.
@@ -19,6 +22,12 @@ Responsive design - use of media queries for adaptive screen design for atleast 
 ![Main page](image-3.png)
 ![Tablet view](image-4.png)
 ![Mobile view](image-5.png)
+
+API Source: https://newsapi.org/
+
+Predeployment will display hardcoded API information to demonstrate successful API backend response simulation.
+
+Deployment will display onl
 
 # React + Vite
 
