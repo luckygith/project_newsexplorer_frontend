@@ -37,10 +37,10 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 		handleMenuIcon();
 	};
 
-	// const handleLogoutClick = () => {
-	// 	console.log("handleLogoutClick");
-	// 	handleLogout();
-	// };
+	const handleLogoutClick = () => {
+		console.log("handleLogoutClick");
+		handleLogout();
+	};
 
 	return (
 		<header
@@ -72,7 +72,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 									src={savedNewsPagePath ? logoutDark : logoutLight}
 									alt=""
 									className="header__profile-button-icon"
-									onClick={handleLogout}
+									onClick={handleLogoutClick}
 								/>
 							</p>
 						</>
