@@ -1,5 +1,7 @@
 # Welcome to my project demonstration, NewsExplorer
 
+Site is live on github pages at: https://luckygith.github.io/project_newsexplorer_frontend/
+
 Technologies and techniques used in this project includes:
 
 Javascript

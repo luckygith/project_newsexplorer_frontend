@@ -55,83 +55,85 @@ function Main({
 	};
 
 	return (
-		<main className="main">
-			<section className="news-cards__container">
-				{preloader ? (
-					<>
-						{" "}
-						<img
-							className="news-cards__preloader-icon"
-							src={preloaderIcon}
-							alt="loading icon"
-						/>
-						<p className="news-cards__preloader-text">
-							Searching for news...
-						</p>{" "}
-					</>
-				) : (
-					<>
-						<div className="news-cards__section">
-							{isSearched && (
-								<h3
-									style={newsCardsTitleStyle}
-									className="news-cards__title"
+		<>
+			{isSearched && (
+				<main className="main">
+					<section className="news-cards__container">
+						{preloader ? (
+							<>
+								{" "}
+								<img
+									className="news-cards__preloader-icon"
+									src={preloaderIcon}
+									alt="loading icon"
+								/>
+								<p className="news-cards__preloader-text">
+									Searching for news...
+								</p>{" "}
+							</>
+						) : (
+							<>
+								<div className="news-cards__section">
+									<h3
+										style={newsCardsTitleStyle}
+										className="news-cards__title"
+									>
+										Search Results
+									</h3>
+
+									<ul className="news-cards__list">
+										{ItemsArray.length === 0 ? (
+											isLoggedIn ? (
+												<>
+													<div className="news-cards__search-empty">
+														<img
+															src={notFound}
+															alt="nothing found icon"
+														/>
+														<p className="news-cards__preloader-title">
+															Nothing found
+														</p>
+														<p className="news-cards__preloader-text">
+															Sorry, but nothing matched your search terms.
+														</p>
+													</div>
+												</>
+											) : null
+										) : (
+											<>
+												{newsCards.slice(0, count).map((newsCard, index) => (
+													<NewsCard
+														newsCards={newsCards}
+														newsCard={newsCard}
+														key={newsCard._id}
+														handleLoginClick={handleLoginClick}
+														handleSaveCard={handleSaveCard}
+														isLoggedIn={isLoggedIn}
+														handleRemoveCard={handleRemoveCard}
+													/>
+												))}
+											</>
+										)}
+									</ul>
+								</div>
+							</>
+						)}
+
+						{count < newsCards.length && (
+							<div className="news-cards__extension">
+								<button
+									className="news-cards__extensions-button"
+									type="button"
+									onClick={handleNewsCardsButtonClick}
 								>
-									Search Results
-								</h3>
-							)}
-
-							<ul className="news-cards__list">
-								{ItemsArray.length === 0 ? (
-									isLoggedIn ? (
-										<>
-											<div className="news-cards__search-empty">
-												<img
-													src={notFound}
-													alt="nothing found icon"
-												/>
-												<p className="news-cards__preloader-title">
-													Nothing found
-												</p>
-												<p className="news-cards__preloader-text">
-													Sorry, but nothing matched your search terms.
-												</p>
-											</div>
-										</>
-									) : null
-								) : (
-									<>
-										{newsCards.slice(0, count).map((newsCard, index) => (
-											<NewsCard
-												newsCards={newsCards}
-												newsCard={newsCard}
-												key={newsCard._id}
-												handleLoginClick={handleLoginClick}
-												handleSaveCard={handleSaveCard}
-												isLoggedIn={isLoggedIn}
-												handleRemoveCard={handleRemoveCard}
-											/>
-										))}
-									</>
-								)}
-							</ul>
-						</div>
-					</>
-				)}
-
-				{count < newsCards.length && (
-					<div className="news-cards__extension">
-						<button
-							className="news-cards__extensions-button"
-							type="button"
-							onClick={handleNewsCardsButtonClick}
-						>
-							Show more
-						</button>
-					</div>
-				)}
-			</section>
-		</main>
+									Show more
+								</button>
+							</div>
+						)}
+					</section>
+				</main>
+			)}
+		</>
 	);
 }
 
