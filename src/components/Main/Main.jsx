@@ -6,7 +6,7 @@ import "../Main/Main.css";
 import NewsCard from "../NewsCard/NewsCard";
 import preloaderIcon from "../../assets/preloaderIcon.svg";
 import notFound from "../../assets/notFound.svg";
-import { ItemsArray } from "../../utils/ItemsArray";
+// import { ItemsArray } from "../../utils/ItemsArray";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
@@ -17,7 +17,7 @@ function Main({
 	preloader,
 	newsCards,
 	handleRemoveCard,
-	savedNewsCards,
+
 	isSearched,
 }) {
 	const currentUser = useContext(CurrentUserContext);
@@ -106,7 +106,7 @@ function Main({
 													<NewsCard
 														newsCards={newsCards}
 														newsCard={newsCard}
-														key={newsCard._id}
+														key={newsCard.url}
 														handleLoginClick={handleLoginClick}
 														handleSaveCard={handleSaveCard}
 														isLoggedIn={isLoggedIn}

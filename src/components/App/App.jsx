@@ -159,7 +159,6 @@ function App() {
 			.then(({ article }) => {
 				console.log(article);
 				setNewsCard({
-					_id: newsCard._id,
 					title: newsCard.title,
 					urlToImage: newsCard.urlToImage,
 					publishedAt: newsCard.publishedAt,

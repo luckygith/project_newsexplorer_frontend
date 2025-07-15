@@ -57,6 +57,22 @@
 	flex-direction: column;
 }
 
+.navigation__items-home {
+	text-decoration: none;
+}
+
+.navigation__items-profile-news {
+	text-decoration: none;
+}
+
+.navigation__items-home:visited {
+	color: #ffffff;
+}
+
+.navigation__items-profile-news:visited {
+	color: #ffffff;
+}
+
 .navigation__items-login {
 	align-self: center;
 }
