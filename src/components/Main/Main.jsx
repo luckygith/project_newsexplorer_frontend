@@ -82,7 +82,7 @@ function Main({
 									</h3>
 
 									<ul className="news-cards__list">
-										{ItemsArray.length === 0 ? (
+										{newsCards.length === 0 ? (
 											isLoggedIn ? (
 												<>
 													<div className="news-cards__search-empty">

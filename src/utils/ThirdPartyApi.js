@@ -13,6 +13,7 @@ export const checkResponse = (res) => {
 };
 
 export function fetchArticles(q) {
+	console.log(card._id);
 	return fetch(`${baseUrl}?q=${q}&apiKey=${APIkey}`)
 		.then(checkResponse)
 		.then((res) => {

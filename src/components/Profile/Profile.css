@@ -40,13 +40,20 @@
 
 .profile__news-cards-container {
 	max-width: 400px;
-	height: 272px;
+
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 }
 
 .profile__news-cards-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 @media screen and (max-width: 768px) {
