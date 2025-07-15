@@ -46,16 +46,16 @@ function App() {
 
 	// HANDLERS
 
-	const handleSearchForm = (query) => {
-		if (!query) {
+	const handleSearchForm = (q) => {
+		if (!q) {
 			console.log("Please type to search articles");
 			setNewsCards([]);
 			return;
 		}
-		setSearchQuery(query);
+		setSearchQuery(q);
 		setIsSearched(true);
 		setPreloader(true);
-		fetchArticles(query)
+		fetchArticles(q)
 			.then((res) => {
 				if (res.articles.length === 0) {
 					throw new Error("Nothing Found");

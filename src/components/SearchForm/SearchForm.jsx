@@ -4,16 +4,16 @@ import "./SearchForm.css";
 
 function SearchForm({ handleSearchForm, preloader }) {
 	const { values, handleChange, isDisabled } = useForm({
-		query: "",
+		q: "",
 	});
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!values.query) {
+		if (!values.q) {
 			console.log("Please type to search articles");
 			return;
 		}
-		handleSearchForm(values.query);
+		handleSearchForm(values.q);
 	};
 
 	return (
@@ -29,8 +29,8 @@ function SearchForm({ handleSearchForm, preloader }) {
 					onSubmit={handleSubmit}
 				>
 					<input
-						name="query"
-						value={values.query}
+						name="q"
+						value={values.q}
 						onChange={handleChange}
 						className="search-form__search-container-input"
 						type="text"
