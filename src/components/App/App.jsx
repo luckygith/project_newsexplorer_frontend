@@ -42,6 +42,8 @@ function App() {
 	const [preloader, setPreloader] = useState(false);
 	const [isSearched, setIsSearched] = useState(false);
 
+	const [isLoading, setIsLoading] = useState(false);
+
 	// HANDLERS
 
 	const handleSearchForm = (query) => {
@@ -291,6 +293,7 @@ function App() {
 									<SearchForm
 										handleSearchForm={handleSearchForm}
 										preloader={preloader}
+										isLoading={isLoading}
 									/>
 									<Main
 										handleLoginClick={handleLoginClick}
@@ -334,6 +337,7 @@ function App() {
 						handleLogin={handleLogin}
 						handleRegistration={handleRegistration}
 						handleRegisterClick={handleRegisterClick}
+						isLoading={isLoading}
 					/>
 				)}
 
@@ -343,6 +347,7 @@ function App() {
 						handleCloseModal={handleCloseModal}
 						handleRegistration={handleRegistration}
 						handleLoginClick={handleLoginClick}
+						isLoading={isLoading}
 					/>
 				)}
 
@@ -351,6 +356,7 @@ function App() {
 						isOpen={activeModal === "registration-confirmed"}
 						handleLoginClick={handleLoginClick}
 						handleCloseModal={handleCloseModal}
+						isLoading={isLoading}
 					/>
 				)}
 
@@ -359,6 +365,7 @@ function App() {
 						isOpen={activeModal === "navigation-menu"}
 						handleLoginClick={handleLoginClick}
 						handleCloseModal={handleCloseModal}
+						isLoading={isLoading}
 					/>
 				)}
 			</div>

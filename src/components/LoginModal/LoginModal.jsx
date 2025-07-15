@@ -9,6 +9,7 @@ const LoginModal = ({
 	handleLogin,
 	handleRegisterClick,
 	isOpen,
+	isLoading,
 }) => {
 	const { values, handleChange, setValues, isDisabled } = useForm({
 		email: "",
@@ -30,6 +31,7 @@ const LoginModal = ({
 			handleCloseModal={handleCloseModal}
 			onSubmit={handleSubmit}
 			isOpen={isOpen}
+			isLoading={isLoading}
 		>
 			<label
 				htmlFor="email"
@@ -74,8 +76,7 @@ const LoginModal = ({
 				<button
 					type="submit"
 					className="modal__form-submit"
-					disabled={isDisabled}
-					// disabled={isLoading || isDisabled}
+					disabled={isLoading || isDisabled}
 				>
 					Sign in
 					{/* {isLoading ? "Logging in..." : "Log In"} */}

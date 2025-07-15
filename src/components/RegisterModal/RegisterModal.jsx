@@ -9,6 +9,7 @@ const RegistrationModal = ({
 	handleRegistration,
 	isOpen,
 	handleLoginClick,
+	isLoading,
 }) => {
 	const { values, handleChange, isDisabled } = useForm({
 		email: "",
@@ -31,6 +32,7 @@ const RegistrationModal = ({
 			handleCloseModal={handleCloseModal}
 			onSubmit={handleSubmit}
 			isOpen={isOpen}
+			buttonText={isLoading ? "Saving changes..." : "Save changes"}
 		>
 			<label
 				htmlFor="email"
@@ -94,7 +96,10 @@ const RegistrationModal = ({
 			<div className="modal__buttons-container">
 				<button
 					type="submit"
-					className="modal__form-submit"
+					disabled={isLoading || isDisabled}
+					className={
+						isDisabled ? "modal__form-submit-disabled" : "modal__form-submit"
+					}
 				>
 					Sign up
 				</button>
