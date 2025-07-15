@@ -20,7 +20,10 @@ function SearchForm({ handleSearchForm, preloader }) {
 		<div className="search-form">
 			<div className="search-form__container">
 				<p className="search-form__title">What's going on in the world?</p>
-				<p className="search-form__description">Find the latest news...</p>
+				<p className="search-form__description">
+					Find the latest news on any topic and save them in your personal
+					account
+				</p>
 				<form
 					className="search-form__search-container"
 					onSubmit={handleSubmit}

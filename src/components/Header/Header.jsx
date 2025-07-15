@@ -61,7 +61,12 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 					</Link>
 					{isLoggedIn ? (
 						<>
-							{" "}
+							<Link
+								className={`header__profile-news-button ${savedNewsPagePath ? "header__home-button_dark" : "header__home-button_light"}`}
+								to="/saved-news"
+							>
+								Saved Articles
+							</Link>
 							<p
 								className="header__profile-button"
 								type="button"

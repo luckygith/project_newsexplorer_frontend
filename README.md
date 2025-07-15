@@ -29,8 +29,6 @@ API Source: https://newsapi.org/
 
 Predeployment will display hardcoded API information to demonstrate successful API backend response simulation.
 
-Deployment will display onl
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

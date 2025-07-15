@@ -49,7 +49,7 @@
 .profile__news-cards-list {
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 768px) {
 	.profile__text-container {
 		padding: 30px 16px 32px;
 	}
@@ -58,7 +58,21 @@
 	}
 	.profile__title {
 		font-size: 30px;
+		background-color: pink;
 	}
+	.profile__content {
+		top: 66px;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.profile__text-container {
+		padding: 30px 16px 32px;
+	}
+	.profile__subtitle {
+		font-size: 14px;
+	}
+
 	.profile__content {
 		top: 66px;
 	}
