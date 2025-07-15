@@ -1,5 +1,4 @@
 .profile__content {
-	position: relative;
 	z-index: 1;
 	top: 80px;
 	font-family: "Roboto";
@@ -39,11 +38,6 @@
 }
 
 .profile__news-cards-container {
-	max-width: 400px;
-
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
 }
 
 .profile__news-cards-list {
@@ -65,7 +59,6 @@
 	}
 	.profile__title {
 		font-size: 30px;
-		background-color: pink;
 	}
 	.profile__content {
 		top: 66px;

@@ -17,7 +17,7 @@ function Main({
 	preloader,
 	newsCards,
 	handleRemoveCard,
-
+	// savedNewsCards,
 	isSearched,
 }) {
 	const currentUser = useContext(CurrentUserContext);
