@@ -39,7 +39,7 @@ function Profile({
 							{isLoggedIn &&
 								savedNewsCards.map((newsCard) => (
 									<NewsCard
-										key={newsCard._id}
+										key={newsCard.url}
 										newsCard={newsCard}
 										handleLoginClick={handleLoginClick}
 										handleSaveCard={handleSaveCard}

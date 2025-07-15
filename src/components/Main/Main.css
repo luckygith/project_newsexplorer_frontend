@@ -8,8 +8,13 @@
 
 .main__news-cards_search {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.news-cards__preloader-icon {
+	margin-bottom: 24px;
 }
 
 @media screen and (max-width: 530px) {

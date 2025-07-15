@@ -15,7 +15,7 @@ function NewsCard({
 	handleSaveCard,
 	handleRemoveCard,
 }) {
-	console.log(newsCard._id);
+	console.log(newsCard.url);
 	const currentUser = useContext(CurrentUserContext);
 	const isLoggedIn = currentUser && currentUser.username;
 	const [isSaved, setIsSaved] = useState(false);
