@@ -1,14 +1,19 @@
 .main {
-    max-width: 1440px;
-    background-color: #F5F6F7;
-    padding: 0;
-    margin:0;
-    padding: 80px 104px ;
-   
+	max-width: 1440px;
+	background-color: #f5f6f7;
+	padding: 0;
+	margin: 0;
+	padding: 80px 104px;
+}
+
+.main__news-cards_search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @media screen and (max-width: 530px) {
-    .main {
-        padding: 32px 16px ;
-    }
+	.main {
+		padding: 32px 16px;
+	}
 }

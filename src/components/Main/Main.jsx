@@ -61,15 +61,16 @@ function Main({
 					<section className="news-cards__container">
 						{preloader ? (
 							<>
-								{" "}
-								<img
-									className="news-cards__preloader-icon"
-									src={preloaderIcon}
-									alt="loading icon"
-								/>
-								<p className="news-cards__preloader-text">
-									Searching for news...
-								</p>{" "}
+								<div className="main__news-cards_search">
+									<img
+										className="news-cards__preloader-icon"
+										src={preloaderIcon}
+										alt="loading icon"
+									/>
+									<p className="news-cards__preloader-text">
+										Searching for news...
+									</p>
+								</div>
 							</>
 						) : (
 							<>
