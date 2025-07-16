@@ -25,7 +25,7 @@ function Profile({
 			/>
 			<section className="profile__content">
 				<div className="profile__text-container">
-					<p className="profile__subtitle">Saved articles</p>
+					{/* <p className="profile__subtitle">Saved articles</p> */}
 					<h3 className="profile__title">
 						Elise, you have {savedNewsCards.length} saved articles
 					</h3>

@@ -38,7 +38,7 @@ const Navigation = ({ handleLoginClick, handleCloseModal }) => {
 						className="navigation__items-profile-news"
 						to="/saved-news"
 					>
-						Saved Articles
+						Saved Articlessss
 					</Link>
 
 					<p
