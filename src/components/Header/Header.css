@@ -121,6 +121,7 @@
 	padding: 0;
 	margin: 0;
 	cursor: pointer;
+	margin-left: 34px;
 }
 
 .header__profile-button {
@@ -136,6 +137,7 @@
 	padding: 0;
 	margin: 0;
 	cursor: pointer;
+	margin-left: 32px;
 }
 
 .header__menu-icon {
@@ -153,13 +155,25 @@
 		padding: 0 16px;
 	}
 
+	.header__home-button {
+		width: 60px;
+	}
+
 	.header__links {
 		height: 67px;
 	}
 
 	.header__profile-news-button {
 		margin: 0;
-		margin-right: 16px;
+		width: 160px;
+	}
+
+	.header__sign-in-button {
+		width: 152px;
+	}
+
+	.header__button {
+		margin-left: 16px;
 	}
 }
 @media screen and (max-width: 530px) {
@@ -167,8 +181,6 @@
 		width: 100%;
 	}
 	.header__container {
-		/* max-width: 530px;
-        min-width: 320px; */
 		padding: 0 20px;
 	}
 
@@ -202,6 +214,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		box-sizing: border-box;
 	}
 
 	.header__logo {

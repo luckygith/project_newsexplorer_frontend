@@ -68,7 +68,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 								Saved Articles
 							</Link>
 							<p
-								className="header__profile-button"
+								className="header__profile-button header__button"
 								type="button"
 								style={headerButtonStyle}
 							>
@@ -84,7 +84,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 					) : (
 						<>
 							<p
-								className="header__sign-in-button"
+								className="header__sign-in-button header__button"
 								type="button"
 								style={headerButtonStyle}
 								onClick={handleLoginClick}
