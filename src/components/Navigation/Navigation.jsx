@@ -6,7 +6,12 @@ import useModalClose from "../../hooks/modal";
 import close from "../../assets/close.svg";
 import { useLocation } from "react-router-dom";
 
-const Navigation = ({ handleLoginClick, handleCloseModal }) => {
+const Navigation = ({
+	isLoggedIn,
+	handleLoginClick,
+	handleLogoutClick,
+	handleCloseModal,
+}) => {
 	const location = useLocation();
 	const savedNewsPagePath = location.pathname === "/saved-news";
 
@@ -40,14 +45,23 @@ const Navigation = ({ handleLoginClick, handleCloseModal }) => {
 					>
 						Saved Articles
 					</Link>
-
-					<p
-						className="navigation__items-login header__sign-in-button"
-						type="button"
-						onClick={handleLoginClick}
-					>
-						Sign in
-					</p>
+					{isLoggedIn ? (
+						<p
+							className="navigation__items-login header__sign-in-button"
+							type="button"
+							onClick={handleLogoutClick}
+						>
+							Sign out
+						</p>
+					) : (
+						<p
+							className="navigation__items-login header__sign-in-button"
+							type="button"
+							onClick={handleLoginClick}
+						>
+							Sign in
+						</p>
+					)}
 				</div>
 			</div>
 		</div>

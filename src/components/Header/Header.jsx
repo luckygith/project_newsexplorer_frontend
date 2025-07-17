@@ -54,7 +54,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 				<p className="header__logo">NewsExplorer</p>
 				<div className="header__links">
 					<Link
-						className={`header__home-button ${savedNewsPagePath ? "header__home-button_dark" : "header__home-button_light"}`}
+						className={`header__home-button header__link ${savedNewsPagePath ? "header__home-button_dark header__link-dark" : "header__home-button_light header__link-light"}`}
 						to="/"
 					>
 						Home
@@ -62,7 +62,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 					{isLoggedIn ? (
 						<>
 							<Link
-								className={`header__profile-news-button ${savedNewsPagePath ? "header__home-button_dark" : "header__home-button_light"}`}
+								className={`header__profile-news-button header__link ${savedNewsPagePath ? "header__home-button_dark header__link-dark" : "header__home-button_light header__link-light"}`}
 								to="/saved-news"
 							>
 								Saved Articles

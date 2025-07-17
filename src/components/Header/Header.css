@@ -20,7 +20,7 @@
 	align-items: center;
 	justify-content: space-between;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	height: 66px;
+	height: 80px;
 	position: relative;
 	z-index: 10000;
 }
@@ -36,15 +36,34 @@
 
 .header__links {
 	display: flex;
+
 	align-items: center;
 	font-family: "Roboto";
 	font-weight: 500;
 	font-size: 18px;
+	height: 80px;
+	box-sizing: border-box;
+}
+
+.header__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80px;
+}
+
+.header__link-dark:hover {
+	border-bottom: 3px solid #000;
+	background-color: transparent;
+}
+
+.header__link-light:hover {
+	border-bottom: 3px solid #ffffff;
+	background-color: transparent;
 }
 
 .header__home-button {
-	margin-left: 20px;
-	margin-right: 42px;
+	width: 68px;
 	text-decoration: none;
 }
 
@@ -67,8 +86,9 @@
 }
 
 .header__profile-news-button {
-	margin-left: 34px;
-	margin-right: 64px;
+	display: flex;
+	width: 178px;
+	justify-content: center;
 	text-decoration: none;
 }
 
@@ -129,16 +149,19 @@
 
 @media screen and (max-width: 768px) {
 	.header__container {
-		height: 56px;
+		height: 67px;
 		padding: 0 16px;
 	}
-}
 
-.header__profile-news-button {
-	margin: 0;
-	margin-right: 16px;
-}
+	.header__links {
+		height: 67px;
+	}
 
+	.header__profile-news-button {
+		margin: 0;
+		margin-right: 16px;
+	}
+}
 @media screen and (max-width: 530px) {
 	.header {
 		width: 100%;
@@ -158,6 +181,7 @@
 	}
 
 	.header__links {
+		height: 67px;
 		display: none;
 	}
 
