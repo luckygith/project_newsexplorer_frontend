@@ -17,7 +17,7 @@ function Main({
 	preloader,
 	newsCards,
 	handleRemoveCard,
-	// savedNewsCards,
+	isEmptySearch,
 	isSearched,
 }) {
 	const currentUser = useContext(CurrentUserContext);
@@ -75,34 +75,33 @@ function Main({
 						) : (
 							<>
 								<div className="news-cards__section">
-									<h3
-										style={newsCardsTitleStyle}
-										className="news-cards__title"
-									>
-										Search Results
-									</h3>
+									{newsCards.length === 0 && isEmptySearch ? (
+										// isLoggedIn ? (
+										// 	<p>Please log in</p>
+										// ) :
+										<div className="news-cards__search-empty">
+											<img
+												src={notFound}
+												alt="nothing found icon"
+											/>
+											<p className="news-cards__preloader-title">
+												Nothing found
+											</p>
+											<p className="news-cards__preloader-text">
+												Sorry, but nothing matched your search terms.
+											</p>
+										</div>
+									) : (
+										<>
+											<h3
+												style={newsCardsTitleStyle}
+												className="news-cards__title"
+											>
+												Search Results
+											</h3>
 
-									<ul className="news-cards__list">
-										{newsCards.length === 0 ? (
-											isLoggedIn ? (
-												<>
-													<div className="news-cards__search-empty">
-														<img
-															src={notFound}
-															alt="nothing found icon"
-														/>
-														<p className="news-cards__preloader-title">
-															Nothing found
-														</p>
-														<p className="news-cards__preloader-text">
-															Sorry, but nothing matched your search terms.
-														</p>
-													</div>
-												</>
-											) : null
-										) : (
-											<>
-												{newsCards.slice(0, count).map((newsCard, _id) => (
+											<ul className="news-cards__list">
+												{newsCards.slice(0, count).map((newsCard) => (
 													<NewsCard
 														newsCards={newsCards}
 														newsCard={newsCard}
@@ -113,9 +112,9 @@ function Main({
 														handleRemoveCard={handleRemoveCard}
 													/>
 												))}
-											</>
-										)}
-									</ul>
+											</ul>
+										</>
+									)}
 								</div>
 							</>
 						)}

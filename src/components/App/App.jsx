@@ -45,6 +45,7 @@ function App() {
 
 	const [isLoading, setIsLoading] = useState(false);
 
+	const [isEmptySearch, setIsEmptySearch] = useState(false);
 	// HANDLERS
 
 	const handleSearchForm = (q) => {
@@ -59,9 +60,11 @@ function App() {
 		fetchArticles(q)
 			.then((res) => {
 				if (res.articles.length === 0) {
+					setIsEmptySearch(true);
+					setNewsCards([]);
+					// return;
 					throw new Error("Nothing Found");
 				}
-				console.log(res.articles);
 				setNewsCards(res.articles);
 				console.log(res.articles);
 				setIsSearched(true);
@@ -71,8 +74,10 @@ function App() {
 				console.error(
 					"Sorry, something went wrong during the request. Please try again later."
 				);
+				setIsEmptySearch(true);
+				setNewsCards([]);
+				setIsSearched(true);
 				console.error(error);
-				setIsSearched(false);
 			})
 			.finally(() => {
 				setPreloader(false);
@@ -312,6 +317,7 @@ function App() {
 										newsCard={newsCard}
 										savedNewsCards={savedNewsCards}
 										isSearched={isSearched}
+										isEmptySearch={isEmptySearch}
 									/>
 									<About />
 								</>
