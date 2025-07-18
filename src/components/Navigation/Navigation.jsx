@@ -22,7 +22,7 @@ const Navigation = ({
 	};
 
 	return (
-		<div className="navigation">
+		<nav className="navigation">
 			<div className="navigation__modal-container">
 				<div className="navigation__header">
 					<div className="navigation__header-logo">
@@ -38,40 +38,48 @@ const Navigation = ({
 						/>
 					</button>
 				</div>
-				<div className="navigation__items">
-					<Link
-						className="navigation__items-home"
-						to="/"
-					>
-						Home
-					</Link>
-					<Link
-						className="navigation__items-profile-news"
-						to="/saved-news"
-					>
-						Saved Articles
-					</Link>
-					{isLoggedIn ? (
+				<ul className="navigation__items">
+					<li>
 						<Link
-							className="navigation__items-login header__sign-in-button"
+							className="navigation__items-home"
 							to="/"
-							type="button"
-							onClick={handleLogoutClick}
 						>
-							Sign out
+							Home
 						</Link>
-					) : (
-						<p
-							className="navigation__items-login header__sign-in-button"
-							type="button"
-							onClick={handleLoginClick}
+					</li>
+					<li>
+						<Link
+							className="navigation__items-profile-news"
+							to="/saved-news"
 						>
-							Sign in
-						</p>
-					)}
-				</div>
+							Saved Articles
+						</Link>
+					</li>
+					<div className="navigation__items-logging-button">
+						{isLoggedIn ? (
+							<li>
+								<Link
+									className="navigation__items-logging"
+									to="/"
+									type="button"
+									onClick={handleLogoutClick}
+								>
+									Sign out
+								</Link>
+							</li>
+						) : (
+							<li
+								className="navigation__items-logging"
+								type="button"
+								onClick={handleLoginClick}
+							>
+								Sign in
+							</li>
+						)}
+					</div>
+				</ul>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

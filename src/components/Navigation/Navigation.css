@@ -55,6 +55,7 @@
 	padding: 16px 16px 24px;
 	display: flex;
 	flex-direction: column;
+	list-style-type: none;
 }
 
 .navigation__items-home {
@@ -75,4 +76,28 @@
 
 .navigation__items-login {
 	align-self: center;
+}
+
+.navigation__items-logging-button {
+	display: flex;
+	justify-content: center;
+}
+.navigation__items-logging {
+	border-radius: 100px;
+	width: 176px;
+	height: 40px;
+	background-color: transparent;
+	cursor: pointer;
+	border: 1px solid #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.navigation__items-logging:visited {
+	color: #ffffff;
 }

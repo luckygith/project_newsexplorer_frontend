@@ -88,8 +88,8 @@ function NewsCard({
 				/>
 				<div className="news-card__text-container">
 					<div className="news-card__content">
-						<h3 className="news-card__date">{formattedPublishedAt}</h3>
-						<h2 className="news-card__title">{newsCard.title}</h2>
+						<h2 className="news-card__date">{formattedPublishedAt}</h2>
+						<h1 className="news-card__title">{newsCard.title}</h1>
 						<p className="news-card__description">{newsCard.description}</p>
 					</div>
 					<h3 className="news-card__category">{newsCard.source.name}</h3>

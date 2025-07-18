@@ -19,6 +19,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 
 	const headerTextStyle = {
 		color: savedNewsPagePath ? "black" : "white",
+		position: savedNewsPagePath ? "relative" : "absolute",
 	};
 
 	const headerContainerStyle = {
@@ -68,7 +69,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 								Saved Articles
 							</Link>
 							<Link
-								className={`header__profile-button header__button ${savedNewsPagePath ? "header__profile-button_dark" : "header__profile-button--light"}`}
+								className={`header__profile-button header__button header__link ${savedNewsPagePath ? "header__profile-button--dark" : "header__profile-button--light"}`}
 								type="button"
 								to="/"
 								style={headerButtonStyle}
@@ -85,15 +86,14 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 						</>
 					) : (
 						<>
-							<p
+							<a
 								className="header__sign-in-button header__button"
 								type="button"
 								style={headerButtonStyle}
 								onClick={handleLoginClick}
 							>
-								{" "}
 								Sign in
-							</p>
+							</a>
 						</>
 					)}
 				</div>

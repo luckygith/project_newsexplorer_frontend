@@ -44,7 +44,6 @@
 
 .header__links {
 	display: flex;
-
 	align-items: center;
 	font-family: "Roboto";
 	font-weight: 500;
@@ -130,6 +129,7 @@
 	margin: 0;
 	cursor: pointer;
 	margin-left: 34px;
+	text-decoration: none;
 }
 
 .header__profile-button {

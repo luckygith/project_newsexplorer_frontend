@@ -29,14 +29,17 @@ function Profile({
 				/> */}
 				<section className="profile__content">
 					<div className="profile__text-container">
-						{/* <p className="profile__subtitle">Saved articles</p> */}
-						<h3 className="profile__title">
+						<h2 className="profile__subtitle">Saved articles</h2>
+						<h1 className="profile__title">
 							{currentUser.username}, you have {savedNewsCards.length} saved
 							articles
+						</h1>
+						<h3 className="profile__heading">
+							By keywords:{" "}
+							<span className="profile__heading-keywords">
+								Nature, Yellowstone, and 2 others
+							</span>
 						</h3>
-						<p className="profile__heading">
-							By keywords: Nature, Yellowstone, and 2 others
-						</p>
 					</div>
 					<div className="profile__saved-cards">
 						<div className="profile__news-cards-container">

@@ -21,6 +21,12 @@
 .footer__links {
 	display: flex;
 	align-items: center;
+	list-style: none;
+	padding: 0;
+}
+
+.footer__links-social-container {
+	display: flex;
 }
 
 .footer__links-social {

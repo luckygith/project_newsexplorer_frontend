@@ -22,15 +22,17 @@
 	margin: 51px 0 0 56px;
 	line-height: 24px;
 	box-sizing: border-box;
+	color: #1a1b22;
 }
 
 .author__title {
 	font-family: "RobotoSlab";
 	font-size: 40px;
-	line-height: 40px;
+	line-height: 46px;
 	letter-spacing: 0;
 	margin-top: 0;
 	margin-bottom: 24px;
+	font-weight: 400;
 }
 
 .author__description {
