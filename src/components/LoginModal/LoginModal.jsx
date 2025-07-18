@@ -40,6 +40,7 @@ const LoginModal = ({
 				Email{""}
 			</label>
 			<input
+				required
 				type="email"
 				value={values.email}
 				onChange={handleChange}
@@ -59,6 +60,7 @@ const LoginModal = ({
 				Password{""}
 			</label>
 			<input
+				required
 				type="password"
 				value={values.password}
 				onChange={handleChange}

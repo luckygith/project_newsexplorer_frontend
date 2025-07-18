@@ -41,6 +41,7 @@ const RegistrationModal = ({
 				Email{""}
 			</label>
 			<input
+				required
 				type="email"
 				value={values.email}
 				onChange={handleChange}
@@ -60,6 +61,7 @@ const RegistrationModal = ({
 				Password{""}
 			</label>
 			<input
+				required
 				type="password"
 				value={values.password}
 				onChange={handleChange}
@@ -80,6 +82,7 @@ const RegistrationModal = ({
 				Username{""}
 			</label>
 			<input
+				required
 				type="username"
 				value={values.username}
 				onChange={handleChange}

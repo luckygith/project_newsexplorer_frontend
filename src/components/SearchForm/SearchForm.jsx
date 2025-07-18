@@ -29,6 +29,7 @@ function SearchForm({ handleSearchForm, preloader }) {
 					onSubmit={handleSubmit}
 				>
 					<input
+						required
 						name="q"
 						value={values.q}
 						onChange={handleChange}
