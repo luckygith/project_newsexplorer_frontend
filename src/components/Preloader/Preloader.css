@@ -1,4 +1,22 @@
-.news-cards__preloader-icon {
+.preloader__news-cards_search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.preloader__cards-search-text {
+	font-family: "Roboto";
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	max-width: 356px;
+	height: 48px;
+	text-align: center;
+	line-height: 24px;
+	color: #b6bcbf;
+}
+.preloader-icon {
 	display: block;
 	border: 4px solid #444;
 	border-bottom-color: #888;

@@ -7,11 +7,11 @@ function Preloader() {
 	return (
 		<div className="preloader__news-cards_search">
 			<img
-				className="news-cards__preloader-icon"
+				className="preloader-icon"
 				src={preloaderIcon}
 				alt="loading icon"
 			/>
-			<p className="main__cards-search-text">Searching for news...</p>
+			<p className="preloader__cards-search-text">Searching for news...</p>
 		</div>
 	);
 }
