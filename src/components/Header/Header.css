@@ -13,6 +13,14 @@
 	width: 100%;
 }
 
+.header--dark {
+	color: #00000;
+}
+
+.header--light {
+	color: #ffffff;
+}
+
 .header__container {
 	padding: 0 104px;
 	display: flex;
@@ -52,12 +60,12 @@
 	height: 80px;
 }
 
-.header__link-dark:hover {
+.header__link--dark:hover {
 	border-bottom: 3px solid #000;
 	background-color: transparent;
 }
 
-.header__link-light:hover {
+.header__link--light:hover {
 	border-bottom: 3px solid #ffffff;
 	background-color: transparent;
 }
@@ -71,17 +79,17 @@
 	text-decoration: none;
 }
 
-.header__home-button_dark {
+.header__home-button--dark {
 	color: black;
 }
-.header__home-button_dark:visited {
+.header__home-button--dark:visited {
 	color: black;
 }
 
-.header__home-button_light {
+.header__home-button--light {
 	color: white;
 }
-.header__home-button_light:visited {
+.header__home-button--light:visited {
 	color: white;
 }
 
@@ -92,19 +100,19 @@
 	text-decoration: none;
 }
 
-.header__profile-news-button_light {
+.header__profile-news-button--light {
 	color: white;
 }
 
-.header__profile-news-button_light:visited {
+.header__profile-news-button--light:visited {
 	color: white;
 }
 
-.header__profile-news-button_dark {
+.header__profile-news-button--dark {
 	color: black;
 }
 
-.header__profile-news-button_dark:visited {
+.header__profile-news-button--dark:visited {
 	color: black;
 }
 
@@ -141,11 +149,11 @@
 	text-decoration: none;
 }
 
-.header__profile-button_dark:visited {
+.header__profile-button--dark:visited {
 	color: #000;
 }
 
-.header__profile-button_light:visited {
+.header__profile-button--light:visited {
 	color: #ffffff;
 }
 

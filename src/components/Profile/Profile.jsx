@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import ItemsArray from "../../utils/ItemsArray"; // make sure this is correctly defined
 import NewsCard from "../NewsCard/NewsCard"; // assuming you're rendering cards
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Profile({
 	handleSaveCard,
@@ -15,43 +17,47 @@ function Profile({
 	savedNewsCards,
 	handleRemoveCard,
 }) {
+	const currentUser = useContext(CurrentUserContext);
 	return (
-		<>
-			<Header
-				handleMenuIcon={handleMenuIcon}
-				handleLoginClick={handleLoginClick}
-				handleLogout={handleLogout}
-				isLoggedIn={isLoggedIn}
-			/>
-			<section className="profile__content">
-				<div className="profile__text-container">
-					{/* <p className="profile__subtitle">Saved articles</p> */}
-					<h3 className="profile__title">
-						Elise, you have {savedNewsCards.length} saved articles
-					</h3>
-					<p className="profile__heading">
-						By keywords: Nature, Yellowstone, and 2 others
-					</p>
-				</div>
-				<div className="profile__saved-cards">
-					<div className="profile__news-cards-container">
-						<ul className="profile__news-cards-list">
-							{isLoggedIn &&
-								savedNewsCards.map((newsCard) => (
-									<NewsCard
-										key={newsCard.url}
-										newsCard={newsCard}
-										handleLoginClick={handleLoginClick}
-										handleSaveCard={handleSaveCard}
-										isLoggedIn={isLoggedIn}
-										handleRemoveCard={handleRemoveCard}
-									/>
-								))}
-						</ul>
+		<div className="profile__container">
+			<>
+				{/* <Header
+					handleMenuIcon={handleMenuIcon}
+					handleLoginClick={handleLoginClick}
+					handleLogout={handleLogout}
+					isLoggedIn={isLoggedIn}
+				/> */}
+				<section className="profile__content">
+					<div className="profile__text-container">
+						{/* <p className="profile__subtitle">Saved articles</p> */}
+						<h3 className="profile__title">
+							{currentUser.username}, you have {savedNewsCards.length} saved
+							articles
+						</h3>
+						<p className="profile__heading">
+							By keywords: Nature, Yellowstone, and 2 others
+						</p>
 					</div>
-				</div>
-			</section>
-		</>
+					<div className="profile__saved-cards">
+						<div className="profile__news-cards-container">
+							<ul className="profile__news-cards-list">
+								{isLoggedIn &&
+									savedNewsCards.map((newsCard) => (
+										<NewsCard
+											key={newsCard.url}
+											newsCard={newsCard}
+											handleLoginClick={handleLoginClick}
+											handleSaveCard={handleSaveCard}
+											isLoggedIn={isLoggedIn}
+											handleRemoveCard={handleRemoveCard}
+										/>
+									))}
+							</ul>
+						</div>
+					</div>
+				</section>
+			</>
+		</div>
 	);
 }
 

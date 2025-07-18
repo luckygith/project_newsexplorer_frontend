@@ -1,10 +1,19 @@
-import React from 'react'
-import '../Preloader/Preloader.css'
+import React from "react";
+import "../Preloader/Preloader.css";
+// import notFound from "../../assets/notFound.svg";
+import preloaderIcon from "../../assets/preloaderIcon.svg";
 
 function Preloader() {
-  return (
-    <div>Searching for news...</div>
-  )
+	return (
+		<div className="preloader__news-cards_search">
+			<img
+				className="news-cards__preloader-icon"
+				src={preloaderIcon}
+				alt="loading icon"
+			/>
+			<p className="main__cards-search-text">Searching for news...</p>
+		</div>
+	);
 }
 
-export default Preloader
+export default Preloader;

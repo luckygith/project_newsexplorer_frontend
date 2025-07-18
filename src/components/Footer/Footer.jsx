@@ -13,7 +13,6 @@ function Footer() {
 					<div className="footer__links-hyperlink-container">
 						<Link
 							className="footer__links-hyperlink footer__links-home"
-							// href="https://tripleten.com/"
 							target="_blank"
 						>
 							Home
