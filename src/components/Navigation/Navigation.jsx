@@ -9,11 +9,17 @@ import { useLocation } from "react-router-dom";
 const Navigation = ({
 	isLoggedIn,
 	handleLoginClick,
-	handleLogoutClick,
 	handleCloseModal,
+	handleLogout,
 }) => {
 	const location = useLocation();
 	const savedNewsPagePath = location.pathname === "/saved-news";
+	const homeNewsPagePath = location.pathname === "/";
+
+	const handleLogoutClick = () => {
+		handleLogout();
+		handleCloseModal();
+	};
 
 	return (
 		<div className="navigation">
@@ -46,13 +52,14 @@ const Navigation = ({
 						Saved Articles
 					</Link>
 					{isLoggedIn ? (
-						<p
+						<Link
 							className="navigation__items-login header__sign-in-button"
+							to="/"
 							type="button"
 							onClick={handleLogoutClick}
 						>
 							Sign out
-						</p>
+						</Link>
 					) : (
 						<p
 							className="navigation__items-login header__sign-in-button"

@@ -67,9 +67,10 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 							>
 								Saved Articles
 							</Link>
-							<p
-								className="header__profile-button header__button"
+							<Link
+								className={`header__profile-button header__button ${savedNewsPagePath ? "header__profile-button_dark" : "header__profile-button_light"}`}
 								type="button"
+								to="/"
 								style={headerButtonStyle}
 							>
 								{currentUser.username}
@@ -78,8 +79,9 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 									alt=""
 									className="header__profile-button-icon"
 									onClick={handleLogoutClick}
+									to="/"
 								/>
-							</p>
+							</Link>
 						</>
 					) : (
 						<>

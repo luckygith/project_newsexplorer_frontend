@@ -138,6 +138,15 @@
 	margin: 0;
 	cursor: pointer;
 	margin-left: 32px;
+	text-decoration: none;
+}
+
+.header__profile-button_dark:visited {
+	color: #000;
+}
+
+.header__profile-button_light:visited {
+	color: #ffffff;
 }
 
 .header__menu-icon {

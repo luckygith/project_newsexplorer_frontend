@@ -269,11 +269,6 @@ function App() {
 		setActiveModal("login");
 	};
 
-	const handleLogoutClick = () => {
-		handleLogout();
-		handleCloseModal();
-	};
-
 	const handleLogout = (token) => {
 		setIsLoggedIn(false);
 		setCurrentUser({});
@@ -374,12 +369,12 @@ function App() {
 
 				{activeModal === "navigation-menu" && (
 					<Navigation
-						handleLogoutClick={handleLogoutClick}
 						isLoggedIn={isLoggedIn}
 						isOpen={activeModal === "navigation-menu"}
 						handleLoginClick={handleLoginClick}
 						handleCloseModal={handleCloseModal}
 						isLoading={isLoading}
+						handleLogout={handleLogout}
 					/>
 				)}
 			</div>
