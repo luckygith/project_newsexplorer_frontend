@@ -34,7 +34,7 @@
 }
 
 .header__logo {
-	font-family: "RobotoSlab";
+	font-family: "RobotoSlab", Arial, Helvetica, sans-serif;
 	font-weight: 700;
 	font-size: 20px;
 	padding: 0;
@@ -45,7 +45,7 @@
 .header__links {
 	display: flex;
 	align-items: center;
-	font-family: "Roboto";
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-weight: 500;
 	font-size: 18px;
 	height: 80px;

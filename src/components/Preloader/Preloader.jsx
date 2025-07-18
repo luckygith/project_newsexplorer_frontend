@@ -11,7 +11,7 @@ function Preloader() {
 				src={preloaderIcon}
 				alt="loading icon"
 			/>
-			<p className="preloader__cards-search-text">Searching for news...</p>
+			<h2 className="preloader__cards-search-text">Searching for news...</h2>
 		</div>
 	);
 }

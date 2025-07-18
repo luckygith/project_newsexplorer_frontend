@@ -26,7 +26,7 @@
 }
 
 .author__title {
-	font-family: "RobotoSlab";
+	font-family: "RobotoSlab", Arial, Helvetica, sans-serif;
 	font-size: 40px;
 	line-height: 46px;
 	letter-spacing: 0;
@@ -36,7 +36,7 @@
 }
 
 .author__description {
-	font-family: "Roboto";
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	line-height: 24px;
 }

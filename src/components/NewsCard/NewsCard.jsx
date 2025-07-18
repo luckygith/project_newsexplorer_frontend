@@ -5,6 +5,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "../NewsCard/NewsCard.css";
 import saveButton from "../../assets/saveButton.svg";
 import unsaveButton from "../../assets/unsaveButton.svg";
+import toSaveButton from "../../assets/toSaveButton.svg";
 import trash from "../../assets/trash.svg";
 import { useLocation } from "react-router-dom";
 import { formatDate } from "../../utils/constants";
@@ -42,6 +43,12 @@ function NewsCard({
 	const location = useLocation();
 	const savedNewsPagePath = location.pathname === "/saved-news";
 
+	// const cardSaveButtonHover =
+
+	// const imgSrc = isHovered ? '/images/product-zoomed.jpg' : '/images/product.jpg';
+
+	//const saveButtonImageSource = isHovered ? {toSave} : {isSaved ? saveButton : unsaveButton}
+
 	return (
 		<li className="news-card">
 			<div className="news-card__container">
@@ -71,13 +78,14 @@ function NewsCard({
 									Sign in to save articles
 								</button>
 							)}
-
-							<img
-								className="news-card__save-button"
-								src={isSaved ? saveButton : unsaveButton}
-								onClick={isLoggedIn ? handleSaveClick : null}
-								alt="save article button"
-							/>
+							<div>
+								<img
+									className="news-card__save-button"
+									src={isSaved ? saveButton : unsaveButton}
+									onClick={isLoggedIn ? handleSaveClick : null}
+									alt="save article button"
+								/>
+							</div>
 						</>
 					)}
 				</div>

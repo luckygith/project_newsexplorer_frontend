@@ -46,7 +46,7 @@
 }
 
 .navigation__items {
-	font-family: "Roboto";
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	font-weight: 500;
 	max-width: 530px;

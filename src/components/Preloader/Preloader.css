@@ -6,7 +6,7 @@
 }
 
 .preloader__cards-search-text {
-	font-family: "Roboto";
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
