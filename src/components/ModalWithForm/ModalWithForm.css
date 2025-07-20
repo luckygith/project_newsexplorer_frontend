@@ -82,6 +82,20 @@
 	cursor: not-allowed;
 }
 
+.modal__form-submit-disabled {
+	color: #b6bcbf;
+	background-color: #e6e8eb;
+	cursor: not-allowed;
+
+	max-width: 360px;
+	width: 100%;
+	height: 64px;
+	border-radius: 100px;
+	margin-top: 8px;
+	margin-bottom: 16px;
+	border: none;
+}
+
 .modal__to-register-container {
 	display: flex;
 	justify-content: center;
