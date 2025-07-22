@@ -14,7 +14,7 @@ const ModalwithForm = ({
 
 	return (
 		<div className="modal">
-			<div className="modal__content">
+			<div className={`modal__content `}>
 				<button
 					type="button"
 					className="modal__close"

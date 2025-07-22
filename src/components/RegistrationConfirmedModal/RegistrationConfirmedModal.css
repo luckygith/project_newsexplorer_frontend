@@ -1,4 +1,11 @@
 .registration-modal__content {
-	height: 182px;
-	background-color: pink;
+	height: auto;
+}
+
+.modal__to-register-button {
+	display: flex;
+	align-items: start;
+	margin-bottom: 23px;
+	margin-left: 5px;
+	padding: 0;
 }

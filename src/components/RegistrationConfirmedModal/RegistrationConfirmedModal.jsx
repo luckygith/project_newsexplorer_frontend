@@ -14,20 +14,17 @@ const RegistrationConfirmedModal = ({ handleCloseModal, handleLoginClick }) => {
 
 	return (
 		<ModalwithForm
-			title="Registration succesfully completed!"
+			title="Registration successfully completed!"
 			handleCloseModal={handleCloseModal}
-			// isOpen={isOpen}
-			onSubmit={handleSubmit}
+			handleSubmit={handleSubmit}
 		>
-			<div className="registration-modal__content">
-				<button
-					type="button"
-					className="modal__to-register-button"
-					onClick={handleOrLoginClick}
-				>
-					Sign in
-				</button>
-			</div>
+			<button
+				type="button"
+				className="modal__to-register-button"
+				onClick={handleOrLoginClick}
+			>
+				Sign in
+			</button>
 		</ModalwithForm>
 	);
 };

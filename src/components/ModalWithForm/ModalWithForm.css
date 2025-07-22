@@ -34,7 +34,7 @@
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	max-width: 430px;
 	width: 100%;
-	min-height: 343px;
+	height: auto;
 	background-color: #ffffff;
 	position: relative;
 	border-radius: 16px;
