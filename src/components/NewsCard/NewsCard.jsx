@@ -79,12 +79,11 @@ function NewsCard({
 								</button>
 							)}
 							<div>
-								<img
+								<button
 									className="news-card__save-button"
-									src={isSaved ? saveButton : unsaveButton}
 									onClick={isLoggedIn ? handleSaveClick : null}
 									alt="save article button"
-								/>
+								></button>
 							</div>
 						</>
 					)}
