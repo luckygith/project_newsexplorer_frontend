@@ -28,6 +28,7 @@
 	left: calc(100% + 5px);
 	border: none;
 	background-color: transparent;
+	cursor: pointer;
 }
 
 .modal__content {
@@ -120,6 +121,11 @@
 	margin-bottom: 31px;
 }
 
+.modal__input:focus {
+	border: 2px solid #4a90e2;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
 .modal__input-error {
 }
 
@@ -133,9 +139,6 @@
 		border-radius: 16px;
 		box-sizing: border-box;
 		top: 56px;
-	}
-
-	.modal__close {
 	}
 
 	.modal__form-submit {
