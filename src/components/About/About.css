@@ -39,6 +39,7 @@
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	line-height: 24px;
+	margin-bottom: 35px;
 }
 
 @media screen and (max-width: 1015px) {
@@ -71,7 +72,7 @@
 @media screen and (max-width: 768px) {
 	.author {
 		max-height: 752px;
-		padding: 32px 16px 128px;
+		padding: 40px;
 	}
 
 	.author__title {
@@ -82,17 +83,17 @@
 	.author__image {
 		max-width: 232px;
 		max-height: 232px;
+		margin-top: 21px;
 	}
 
 	.author__content {
 		max-width: 424px;
+		margin: 0;
 	}
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 650px) {
 	.author {
-		flex-direction: column;
-
 		max-height: 752px;
 		padding: 32px 16px 128px;
 	}
@@ -106,5 +107,11 @@
 		margin: 0;
 		left: 0;
 		right: 0;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.author {
+		flex-direction: column;
 	}
 }

@@ -297,11 +297,6 @@ function App() {
 							path="/"
 							element={
 								<>
-									{/* <SearchForm
-										handleSearchForm={handleSearchForm}
-										preloader={preloader}
-										isLoading={isLoading}
-									/> */}
 									<Main
 										handleLoginClick={handleLoginClick}
 										handleSaveCard={handleSaveCard}

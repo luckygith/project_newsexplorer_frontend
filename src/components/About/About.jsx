@@ -13,12 +13,11 @@ function About() {
 				/>
 			</div>
 			<div className="author__content">
-				<h1 className="author__title">About the author</h1>
+				<h2 className="author__title">About the author</h2>
 				<div className="author__description">
 					<p>
 						This block describes the project author. Here you should indicate
-						your name, what you do, and which development technologies you
-						know.{" "}
+						your name, what you do, and which development technologies you know.
 					</p>
 					<p>
 						You can also talk about your experience with TripleTen, what you

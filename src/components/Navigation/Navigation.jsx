@@ -55,7 +55,7 @@ const Navigation = ({
 							Saved Articles
 						</Link>
 					</li>
-					<div className="navigation__items-logging-button">
+					<ul className="navigation__items-logging-button">
 						{isLoggedIn ? (
 							<li>
 								<Link
@@ -76,7 +76,7 @@ const Navigation = ({
 								Sign in
 							</li>
 						)}
-					</div>
+					</ul>
 				</ul>
 			</div>
 		</nav>

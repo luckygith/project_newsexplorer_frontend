@@ -64,7 +64,7 @@ function Header({
 				<p className="header__logo">NewsExplorer</p>
 				<div className="header__links">
 					<Link
-						className={`header__home-button header__link ${savedNewsPagePath ? "header__home-button--dark" : "header__home-button--light header__link--light"}`}
+						className={`header__link--home header__link ${savedNewsPagePath ? "header__link--dark" : " header__link--light header__link--active-home"}`}
 						to="/"
 					>
 						Home
@@ -72,13 +72,13 @@ function Header({
 					{isLoggedIn ? (
 						<>
 							<Link
-								className={`header__profile-news-button header__link ${savedNewsPagePath ? "header__home-button--dark header__link--dark" : "header__home-button--light "}`}
+								className={`header__link--saved header__link ${savedNewsPagePath ? "header__link--dark" : "header__link--light "}`}
 								to="/saved-news"
 							>
 								Saved Articles
 							</Link>
 							<Link
-								className={`header__profile-button header__button header__link ${savedNewsPagePath ? "header__profile-button--dark" : "header__profile-button--light"}`}
+								className={`header__button-profile header__button header__link ${savedNewsPagePath ? "header__button-profile--dark" : "header__button-profile--light"}`}
 								type="button"
 								to="/"
 								style={headerButtonStyle}
@@ -87,7 +87,7 @@ function Header({
 								<img
 									src={savedNewsPagePath ? logoutDark : logoutLight}
 									alt=""
-									className="header__profile-button-icon"
+									className="header__button-profile-icon"
 									onClick={handleLogoutClick}
 									to="/"
 								/>
@@ -96,7 +96,7 @@ function Header({
 					) : (
 						<>
 							<a
-								className="header__sign-in-button header__button"
+								className="header__button-signin header__button"
 								type="button"
 								style={headerButtonStyle}
 								onClick={handleLoginClick}

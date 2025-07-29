@@ -60,21 +60,21 @@ function Main({
 												src={notFound}
 												alt="nothing found icon"
 											/>
-											<h1 className="main__cards-search_empty-title">
+											<h2 className="main__cards-search_empty-title">
 												Nothing found
-											</h1>
+											</h2>
 											<p className="main__cards-search-text">
 												Sorry, but nothing matched your search terms.
 											</p>
 										</div>
 									) : (
 										<>
-											<h1
+											<h2
 												style={newsCardsTitleStyle}
 												className="main__news-cards-title"
 											>
 												Search Results
-											</h1>
+											</h2>
 
 											<ul className="main__news-cards-list">
 												{newsCards.slice(0, count).map((newsCard) => (
