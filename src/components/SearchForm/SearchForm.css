@@ -3,13 +3,11 @@
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	max-width: 1440px;
-	z-index: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
-	z-index: 10000;
-	height: 576px;
+	z-index: 2;
 }
 
 .search-form__container {
@@ -26,7 +24,7 @@
 	font-family: "RobotoSlab", Arial, Helvetica, sans-serif;
 	font-size: 60px;
 	line-height: 64px;
-	margin: 160px 0 0;
+	margin: 80px 0 0;
 	font-weight: 400;
 }
 
@@ -96,6 +94,7 @@
 	.search-form__title {
 		max-width: 385px;
 		font-size: 36px;
+		margin-top: 38px;
 	}
 	.search-form__description {
 		max-width: 452px;
@@ -144,6 +143,9 @@
 		max-width: 288px;
 	}
 
+	.search-form__title {
+		margin-top: 30px;
+	}
 	.search-form__search-container-input {
 		max-width: 288px;
 		height: 56px;

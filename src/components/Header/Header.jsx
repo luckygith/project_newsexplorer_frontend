@@ -9,8 +9,17 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import logoutLight from "../../assets/logoutLight.svg";
 import logoutDark from "../../assets/logoutDark.svg";
 import NewsCard from "../NewsCard/NewsCard";
+import SearchForm from "../SearchForm/SearchForm";
+import Navigation from "../Navigation/Navigation";
 
-function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
+function Header({
+	handleLoginClick,
+	handleMenuIcon,
+	handleLogout,
+	handleSearchForm,
+	preloader,
+	isLoading,
+}) {
 	const currentUser = useContext(CurrentUserContext);
 	const isLoggedIn = currentUser && currentUser.username;
 
@@ -19,7 +28,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 
 	const headerTextStyle = {
 		color: savedNewsPagePath ? "black" : "white",
-		position: savedNewsPagePath ? "relative" : "absolute",
+		// position: savedNewsPagePath ? "relative" : "absolute",
 	};
 
 	const headerContainerStyle = {
@@ -45,7 +54,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 
 	return (
 		<header
-			className={"header"}
+			className={` ${savedNewsPagePath ? "header--saved-news" : "header"}`}
 			style={headerTextStyle}
 		>
 			<div
@@ -55,7 +64,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 				<p className="header__logo">NewsExplorer</p>
 				<div className="header__links">
 					<Link
-						className={`header__home-button header__link ${savedNewsPagePath ? "header__home-button--dark header__link--dark" : "header__home-button--light header__link--light"}`}
+						className={`header__home-button header__link ${savedNewsPagePath ? "header__home-button--dark" : "header__home-button--light header__link--light"}`}
 						to="/"
 					>
 						Home
@@ -63,7 +72,7 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 					{isLoggedIn ? (
 						<>
 							<Link
-								className={`header__profile-news-button header__link ${savedNewsPagePath ? "header__home-button--dark header__link--dark" : "header__home-button--light header__link--light"}`}
+								className={`header__profile-news-button header__link ${savedNewsPagePath ? "header__home-button--dark header__link--dark" : "header__home-button--light "}`}
 								to="/saved-news"
 							>
 								Saved Articles
@@ -106,6 +115,13 @@ function Header({ handleLoginClick, handleMenuIcon, handleLogout }) {
 					/>
 				</button>
 			</div>
+			{!savedNewsPagePath && (
+				<SearchForm
+					handleSearchForm={handleSearchForm}
+					preloader={preloader}
+					isLoading={isLoading}
+				/>
+			)}
 		</header>
 	);
 }
