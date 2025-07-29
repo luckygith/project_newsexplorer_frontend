@@ -289,6 +289,7 @@ function App() {
 						handleMenuIcon={handleMenuIcon}
 						handleLogout={handleLogout}
 						handleLogin={handleLogin}
+						handleSearchForm={handleSearchForm}
 					/>
 
 					<Routes>
