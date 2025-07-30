@@ -3,10 +3,11 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1000;
 	color: #ffffff;
+	height: 100%;
+	width: 100%;
 }
 
 .navigation__modal-container {
@@ -16,6 +17,7 @@
 	flex-direction: column;
 	box-sizing: border-box;
 	margin: 0;
+	visibility: hidden;
 }
 
 .navigation__header-logo {
@@ -81,6 +83,7 @@
 .navigation__items-logging-button {
 	display: flex;
 	justify-content: center;
+	list-style-type: none;
 }
 .navigation__items-logging {
 	border-radius: 100px;
@@ -96,8 +99,15 @@
 	margin: 0;
 	cursor: pointer;
 	text-decoration: none;
+	color: #ffffff;
 }
 
 .navigation__items-logging:visited {
 	color: #ffffff;
+}
+
+@media screen and (max-width: 530px) {
+	.navigation__modal-container {
+		visibility: visible;
+	}
 }

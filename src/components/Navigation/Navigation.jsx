@@ -43,6 +43,7 @@ const Navigation = ({
 						<Link
 							className="navigation__items-home"
 							to="/"
+							onClick={handleCloseModal}
 						>
 							Home
 						</Link>
@@ -51,32 +52,31 @@ const Navigation = ({
 						<Link
 							className="navigation__items-profile-news"
 							to="/saved-news"
+							onClick={handleCloseModal}
 						>
 							Saved Articles
 						</Link>
 					</li>
-					<ul className="navigation__items-logging-button">
+					<li className="navigation__items-logging-button">
 						{isLoggedIn ? (
-							<li>
-								<Link
-									className="navigation__items-logging"
-									to="/"
-									type="button"
-									onClick={handleLogoutClick}
-								>
-									Sign out
-								</Link>
-							</li>
+							<button
+								className="navigation__items-logging"
+								to="/"
+								type="button"
+								onClick={handleLogoutClick}
+							>
+								Sign out
+							</button>
 						) : (
-							<li
+							<button
 								className="navigation__items-logging"
 								type="button"
 								onClick={handleLoginClick}
 							>
 								Sign in
-							</li>
+							</button>
 						)}
-					</ul>
+					</li>
 				</ul>
 			</div>
 		</nav>

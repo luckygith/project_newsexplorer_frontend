@@ -1,6 +1,6 @@
 .page {
 	border: 1px;
-	width: 100vw;
+	width: 100%;
 	/* min-height: auto; */
 	max-width: 1440px;
 	display: block;
