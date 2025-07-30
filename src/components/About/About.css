@@ -42,6 +42,8 @@
 	margin-bottom: 35px;
 }
 
+/* Responsive styles */
+
 @media screen and (max-width: 1015px) {
 	.author {
 		padding: 40px 40px 61px;
@@ -50,16 +52,10 @@
 
 	.author__content {
 		margin-left: 32px;
-		/* margin: 0;
-        padding: 0; */
+
 		margin-bottom: auto;
 		box-sizing: border-box;
 	}
-
-	/* .author__title {
-        padding: 0;
-        margin: 0;
-    } */
 
 	.author__description {
 		max-width: 424px;

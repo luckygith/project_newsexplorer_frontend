@@ -196,6 +196,8 @@
 	z-index: 1000;
 }
 
+/* Responsive styles */
+
 @media screen and (max-width: 768px) {
 	.header__container {
 		height: 67px;

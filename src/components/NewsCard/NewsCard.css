@@ -99,7 +99,7 @@
 .news-card__text-container {
 	font-family: "RobotoSlab", Arial, Helvetica, sans-serif;
 	width: 400px;
-	/* height: 272px; */
+
 	box-sizing: border-box;
 	padding: 24px;
 	display: flex;
@@ -153,6 +153,8 @@
 	height: 40px;
 	width: 40px;
 }
+
+/* Responsive styles */
 
 @media screen and (max-width: 768px) {
 	.news-card {

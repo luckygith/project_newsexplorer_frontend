@@ -129,6 +129,8 @@
 .modal__input-error {
 }
 
+/* Responsive styles */
+
 @media screen and (max-width: 530px) {
 	.modal__content {
 		max-width: 530px;

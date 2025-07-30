@@ -21,12 +21,6 @@ function Profile({
 	return (
 		<div className="profile__container">
 			<>
-				{/* <Header
-					handleMenuIcon={handleMenuIcon}
-					handleLoginClick={handleLoginClick}
-					handleLogout={handleLogout}
-					isLoggedIn={isLoggedIn}
-				/> */}
 				<section className="profile__content">
 					<div className="profile__text-container">
 						<h2 className="profile__subtitle">Saved articles</h2>

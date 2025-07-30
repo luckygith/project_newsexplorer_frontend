@@ -81,7 +81,6 @@ const LoginModal = ({
 					disabled={isLoading || isDisabled}
 				>
 					Sign in
-					{/* {isLoading ? "Logging in..." : "Log In"} */}
 				</button>
 				<div className="modal__to-register-container">
 					or
