@@ -1,0 +1,276 @@
+.header {
+	color: white;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	align-items: center;
+	line-height: 24px;
+	position: relative;
+	justify-content: space-between;
+	max-width: 1440px;
+	width: 100%;
+	height: 576px;
+	background-image: url(../../assets/headerImage.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.header--saved-news {
+	color: white;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	align-items: center;
+	line-height: 24px;
+	background-color: transparent;
+	z-index: 1000;
+	justify-content: space-between;
+	max-width: 1440px;
+	width: 100%;
+}
+
+.header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.header--saved-news {
+	color: white;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	align-items: center;
+	line-height: 24px;
+	background-color: transparent;
+	z-index: 2;
+	justify-content: space-between;
+	max-width: 1440px;
+	width: 100%;
+}
+
+.header--dark {
+	color: #00000;
+}
+
+.header--light {
+	color: #ffffff;
+}
+
+.header__container {
+	padding: 0 104px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	height: 80px;
+	position: relative;
+	z-index: 3;
+}
+
+.header__logo {
+	font-family: "RobotoSlab", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.header__links {
+	display: flex;
+	align-items: center;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	height: 80px;
+	box-sizing: border-box;
+}
+
+.header__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80px;
+	width: 68px;
+	text-decoration: none;
+}
+
+.header__link:visited {
+	text-decoration: none;
+}
+
+.header__link--dark {
+	border-bottom: 3px solid #000;
+	background-color: transparent;
+	color: #000;
+}
+
+.header__link--light {
+	background-color: transparent;
+	color: white;
+}
+
+.header__link--home {
+	color: #000;
+	border-bottom: none;
+}
+
+.header__link--saved--light {
+	color: white;
+}
+
+.header__link--saved {
+	display: flex;
+	width: 178px;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.header__link--active-home {
+	color: white;
+	border-bottom: none;
+	border-bottom: 3px solid #ffffff;
+}
+
+.header__button-signin {
+	border-radius: 100px;
+	width: 176px;
+	height: 40px;
+	background-color: transparent;
+	cursor: pointer;
+	border: 1px solid #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	margin-left: 34px;
+	text-decoration: none;
+}
+
+.header__button {
+	height: 48px;
+}
+
+.header__button-profile {
+	border-radius: 100px;
+	width: 176px;
+	height: 40px;
+	background-color: transparent;
+	cursor: pointer;
+	border: 1px solid #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	margin-left: 32px;
+	text-decoration: none;
+}
+
+.header__button-profile--dark:visited {
+	color: #000;
+}
+
+.header__button-profile--light:visited {
+	color: #ffffff;
+}
+
+.header__menu-icon {
+	height: 24px;
+	width: 24px;
+	border: none;
+	background-color: transparent;
+	display: none;
+	z-index: 1000;
+}
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+	.header__container {
+		height: 67px;
+		padding: 0 16px;
+	}
+
+	.header__link--saved {
+		width: 60px;
+	}
+
+	.header__link {
+		height: 66px;
+	}
+
+	.header__link--saved {
+		margin: 0;
+		width: 160px;
+	}
+
+	.header__button-sign-in {
+		width: 152px;
+	}
+
+	.header__button {
+		margin-left: 16px;
+		height: 40px;
+		max-width: fit-content;
+		width: 100%;
+		padding: 0 10px 0 10px;
+	}
+}
+@media screen and (max-width: 530px) {
+	.header {
+		width: 100%;
+	}
+	.header__container {
+		padding: 0 20px;
+	}
+
+	.header__menu-icon {
+		display: block;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header__links {
+		height: 67px;
+		display: none;
+	}
+
+	.header__button-sign-in {
+		width: 288px;
+		height: 56px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.header {
+		margin: 0 auto;
+	}
+
+	.header__container {
+		width: 100%;
+		padding: 0 16px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		box-sizing: border-box;
+	}
+
+	.header__logo {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
