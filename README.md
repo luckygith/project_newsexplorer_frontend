@@ -1,43 +1,114 @@
-# Welcome to my project demonstration, NewsExplorer
+# NewsExplorer – Front-End Project
 
-Site is live on github pages at: https://luckygith.github.io/project_newsexplorer_frontend/
+NewsExplorer is a React-based news search application that allows users to search live articles, view organized news cards, and save or delete articles to a personal profile. The project demonstrates asynchronous API interaction, state management with Redux, user authentication, and responsive front-end design.
 
-Technologies and techniques used in this project includes:
+# Live Demo:
 
-Javascript
+https://luckygith.github.io/project_newsexplorer_frontend/
 
-React
+# Table of Contents
 
-Redux - use for state specific design for current page identifier and API data object organization for save and delete card function
+1. Overview
+2. Project Features
+3. Technologies Used
+4. Implementation
+5. Screenshots & UI Previews
+6. Results
+7. Future Improvements
+8. Links & Resources
 
-Authorization and authentication
+# Overview
 
-HTML and CSS - in collaboration with Redux, demonstrates the use of state specific js design allowing a contrast between light and dark theme for two separate pages with similarly displayed components.
+NewsExplorer was built to demonstrate dynamic content rendering, user-specific functionality, and third-party API integration in a modern React environment.
 
-Implementation of a third-party API with asynchronous fetch requests - this data will be viewed into organized news cards, which will give the user option to save selected news cards from an array of articles in a separate react component that is on the user's separate profile page. Options to delete cards will also be available to user.
+Key objectives:
 
-Search-query-specific Api - Interaction with online NewsAPI will provide live article viewing. The following information as per search will be included in each newscard: article title, published date, article description, source, and image url.
+- Search and display live news articles based on user queries
 
-Responsive design - use of media queries for adaptive screen design for atleast 3 screen orientations(computer, tablet and mobile). Menu options converted from header buttons to hamburger menu.
+- Allow users to save and manage favorite articles on a profile page
+
+- Demonstrate state-based UI changes such as light/dark theming and responsive design
+
+# Project Features
+
+Live search-query API integration with
+
+- NewsAPI
+- Dynamic news cards showing:
+- Article title
+- Published date
+- Description
+- Source
+- Image
+- Save & delete article functionality for logged-in users
+- Authorization and authentication with protected routes
+
+Redux state management for:
+
+- Page identifier
+- API response organization
+- Save/delete card actions
+- Responsive design with:
+- Desktop, tablet, and mobile breakpoints
+- Hamburger menu for small screens
+- Pre-deployment mode includes hardcoded API data simulation to demonstrate functionality without live API
+
+# Technologies Used
+
+React with Hooks
+
+Redux for state management
+
+Vite for fast React development and HMR
+
+JavaScript (ES6+)
+
+HTML5 & CSS3 (with responsive media queries)
+
+Fetch API for asynchronous requests
+
+Authorization and authentication logic
+
+# Implementation
+
+Built the initial React SPA structure with reusable components for headers, modals, and news cards. Integrated asynchronous fetch requests to NewsAPI for live articles.
+
+Implemented Redux to manage:
+
+API data and search results
+Saved/deleted articles
+Page and theme state
+
+Created a responsive layout for desktop, tablet, and mobile devices.
+
+Added authentication for saving/deleting articles and displaying profile-specific content.
+
+Pre-deployment testing with hardcoded API simulation to ensure UI functionality before live API integration.
+
+# Screenshots & UI Previews
 
 ![Login modal](image-1.png)
 ![Main page](image-3.png)
 ![Tablet view](image-4.png)
 ![Mobile view](image-5.png)
 
-API Source: https://newsapi.org/
+# Results
 
-Predeployment will display hardcoded API information to demonstrate successful API backend response simulation.
+Successfully implemented a news search and save platform with real-time API interaction.
 
-# React + Vite
+Responsive and user-friendly UI across devices.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+State-driven React + Redux architecture supporting authentication and dynamic content.
 
-Currently, two official plugins are available:
+# Future Improvements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add infinite scroll or pagination for large news result sets
+- Include user-specific keyword tags for saved articles
+- Implement unit and integration testing
+- Enhance loading states and error handling for API requests
+- Deploy with custom domain and HTTPS for a fully professional production setup
 
-## Expanding the ESLint configuration
+# Links & Resources
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Live Project: NewsExplorer on GitHub Pages
+NewsAPI Source Documentation: https://newsapi.org/
