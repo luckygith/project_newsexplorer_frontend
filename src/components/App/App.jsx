@@ -16,11 +16,12 @@ import NewsCard from "../NewsCard/NewsCard";
 import Navigation from "../Navigation/Navigation";
 import {
 	addSavedArticle,
+	removeSavedArticles,
 	fetchArticles,
 	fetchSavedArticles,
 	getUserInfo,
 } from "../../utils/api";
-import { authorize, register } from "../../utils/auth";
+import { authorize, register } from "../../utils/auth.js";
 import { setToken, getToken, removeToken } from "../../utils/token";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
@@ -87,12 +88,13 @@ function App() {
 	const handleLogin = ({ email, password }) => {
 		console.log("setup LOGIN");
 		setPreloader(true);
+		console.log(setPreloader);
 		if (!email || !password) {
 			console.log("Login incomplete");
 			return;
 		}
 		const token = getToken();
-		authorize(email, password, token)
+		authorize(email, password)
 			.then((data) => {
 				if (data.token) {
 					setToken(data.token);
@@ -105,11 +107,13 @@ function App() {
 				setCurrentUser({ username, email, _id });
 				setIsLoggedIn(true);
 				console.log(currentUser.username);
+				console.log(isLoggedIn);
 				console.log("User data fetched:", { username, email, _id });
 				handleCloseModal();
 			})
 			.catch((error) => {
 				console.error("Error, login request unsuccessful", error);
+				console.log(authorize);
 			})
 			.finally(() => setPreloader(false));
 	};
@@ -119,10 +123,12 @@ function App() {
 		if (!email || !password || !username) {
 			return;
 		}
+		// const jwt = setToken();
 		register(username, email, password)
 			.then((data) => {
 				if (data) {
 					console.log(data);
+
 					console.log(email);
 					setIsLoggedIn(true);
 				}
@@ -136,6 +142,28 @@ function App() {
 			})
 			.finally(() => setPreloader(false));
 	};
+
+	// const handleRegistration = ({ username, email, password }) => {
+	// 	setPreloader(true);
+	// 	if (!email || !password || !username) {
+	// 		return;
+	// 	}
+
+	// 	register(username, email, password)
+	// 		.then((data) => {
+	// 			if (data) {
+	// 				console.log("Registration successful:", data);
+	// 			}
+	// 		})
+	// 		.then(() => {
+	// 			handleRegistrationConfirmedClick();
+	// 			console.log("registration api successful!");
+	// 		})
+	// 		.catch((error) => {
+	// 			console.error("Error, registration request unsuccessful", error);
+	// 		})
+	// 		.finally(() => setPreloader(false));
+	// };
 
 	// NEWS CARD FUNCTIONS
 
@@ -198,8 +226,10 @@ function App() {
 				.then(({ username, email, _id }) => {
 					setIsLoggedIn(true);
 					setCurrentUser({ username, email, _id });
+					console.log(username, email, _id);
 				})
 				.catch(console.error);
+			console.log("no user logged in");
 		}
 	}, []);
 
@@ -217,6 +247,7 @@ function App() {
 			.then((res) => {
 				console.log(res);
 				console.log(isSearched);
+				console.log(isLoggedIn);
 			})
 			.catch((err) => {
 				console.error("Error fetching saved articles:", err);

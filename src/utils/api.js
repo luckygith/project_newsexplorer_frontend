@@ -1,14 +1,10 @@
-// import { baseUrl } from "./constants";
+import { baseUrl, baseUrlPersonal } from "./constants.js";
 
 export const APIkey = "6e4c205fce68481b80acc66926ef81e0";
 
-const baseUrl = "https://newsapi.org/v2/everything";
+// export const baseUrl = "https://newsapi.org/v2/everything";
 
-// const today = new Date();
-// const fromDate = new Date(today);
-// fromDate.setDate(today.getDate() - 7);
-// const to = today.toISOString().split('T')[0]; //splits after year in the string
-// const from = fromDate.toISOString().split('T')[0];
+// export const baseUrlPersonal = "http://localhost:3000";
 
 export const checkResponse = (res) => {
 	if (res.ok) {
@@ -79,12 +75,23 @@ export const fetchSavedArticles = () => {
 	});
 };
 
-export const getUserInfo = () => {
-	return Promise.resolve({
-		email: "email@example.com",
-		username: "username",
-		_id: "fake-user-id-123",
-	});
+// export const getUserInfo = () => {
+// 	return Promise.resolve({
+// 		email: "email@example.com",
+// 		username: "username",
+// 		_id: "fake-user-id-123",
+// 	});
+// };
+
+export const getUserInfo = (token) => {
+	return fetch(`${baseUrlPersonal}/users/me`, {
+		method: "GET",
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	}).then(checkResponse);
 };
 
 export const addSavedArticle = (article) => {

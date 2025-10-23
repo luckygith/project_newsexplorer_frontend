@@ -2,6 +2,10 @@ import { baseUrl } from "./constants";
 
 // const baseUrl = "https://nomoreparties.co/news/v2/everything";
 
+export const baseUrl = "https://newsapi.org/v2/everything";
+
+export const baseUrlPersonal = "http://localhost:3000";
+
 export const APIkey = "6e4c205fce68481b80acc66926ef81e0";
 
 export const checkResponse = (res) => {
